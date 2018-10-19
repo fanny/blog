@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Fanny&#39;s Blog</title>
+    <link>https://fannyvieira.github.io/personal-blog/categories/</link>
+    <description>Recent content in Categories on Fanny&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Jul 2017 18:36:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://fannyvieira.github.io/personal-blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog</title>
+      <link>https://fannyvieira.github.io/personal-blog/categories/blog/</link>
+      <pubDate>Mon, 24 Jul 2017 18:36:00 +0200</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Releases</title>
+      <link>https://fannyvieira.github.io/personal-blog/categories/releases/</link>
+      <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/categories/releases/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uncategorized</title>
+      <link>https://fannyvieira.github.io/personal-blog/categories/uncategorized/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/categories/uncategorized/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

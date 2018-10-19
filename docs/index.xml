@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fanny&#39;s Blog</title>
+    <link>https://fannyvieira.github.io/personal-blog/</link>
+    <description>Recent content on Fanny&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://fannyvieira.github.io/personal-blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>This One Goes to 11!</title>
+      <link>https://fannyvieira.github.io/personal-blog/2018/</link>
+      <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2018/</guid>
+      <description>Hugo 0.48 is built with the brand new Go 1.11. On the technical side this means that Hugo now uses Go Modules for the build. The big new functional thing in Go 1.11 for Hugo is added support for variable overwrites. This means that you can now do this and get the expected result:
+{{ $var := &amp;quot;Hugo Page&amp;quot; }} {{ if .IsHome }} {{ $var = &amp;quot;Hugo Home&amp;quot; }} {{ end }} Var is {{ $var }}  The above may look obvious, but has not been possible until now.</description>
+    </item>
+    
+    <item>
+      <title>Two Bug Fixes</title>
+      <link>https://fannyvieira.github.io/personal-blog/2018/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2018/</guid>
+      <description> This is a bug-fix release with two fixes.
+Fixes  Fix .Site.Params case regression fdff0d3a @bep #5094 Do not strip IE conditional statements 5a0ee2b9 @bep #5089  Updates to Linux Snap build  Remove unused files from Git, Perl, etc. 834617f9 @anthonyfok Add nodejs to allow PostCSS to work ef20ec1f @anthonyfok  </description>
+    </item>
+    
+    <item>
+      <title>Output Minification, Live-Reload Fixes and More</title>
+      <link>https://fannyvieira.github.io/personal-blog/2018/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2018/</guid>
+      <description>Hugo 0.47 is named Hugo Reloaded. It adds minification support for the final rendered output (run hugo --minify), but it is mostly a bug fix release. And most notably, it fixes a set of issues with live-reloading/partial rebuilds when running hugo server. Working with bundles should now be a more pleasant experience, to pick one example.
+This release represents 35 contributions by 6 contributors to the main Hugo code base.</description>
+    </item>
+    
+    <item>
+      <title>The Summer of Hugo</title>
+      <link>https://fannyvieira.github.io/personal-blog/2018/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2018/</guid>
+      <description>Hugo 0.46 is the closing credits to The Summer of Hugo. While most people have been relaxing on the beach, Hugo has been really busy:
+ 0.42, June 12, 2018: Theme Composition and Inheritance! 0.43, July 9, 2018: Hugo Pipes!  This was followed by some more technical follow-up releases. And today, when July has turned into August, we come with another one. It&amp;rsquo;s not a big release. But with the big interest in Hugo Pipes, we felt that it was important to get this out there sooner rather than later.</description>
+    </item>
+    
+    <item>
+      <title>Hugo 0.45.1: Two Bug Fixes</title>
+      <link>https://fannyvieira.github.io/personal-blog/2018/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2018/</guid>
+      <description> This is a bug-fix release with a couple of important fixes (and one enhancement).
+Enhancements  Add Page.FirstSection 016dd4a6 @bep  Fixes  Fix .Site.GetPage regression 04d4c08d @bep #4989 Fix &amp;ldquo;borrow content from another language&amp;rdquo; issue c6b599a0 @bep #4986  </description>
+    </item>
+    
+    <item>
+      <title>Hugo 0.45: Revival of ref, relref and GetPage</title>
+      <link>https://fannyvieira.github.io/personal-blog/2018/</link>
+      <pubDate>Sun, 22 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2018/</guid>
+      <description>Hugo 0.45 is the revival of ref, relref and GetPage. @vassudanagunta and @bep have done some great work improving the API and implementation for the helper functions used to get one page. Before this release, the API was a little bit clumsy and the result potentially ambiguous in some situations.
+Now you can simply do:
+{{ with .Site.GetPage &amp;quot;/blog/my-post.md&amp;quot; }}{{ .Title }}{{ end }}  Or to get a section page:</description>
+    </item>
+    
+    <item>
+      <title>Hugo 0.44: Friday the 13th Edition</title>
+      <link>https://fannyvieira.github.io/personal-blog/2018/</link>
+      <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2018/</guid>
+      <description>Hugo 0.44 is the follow-up release, or The Sequel, of the very well received 0.43 only days ago. That release added Hugo Pipes, with SCSS/SASS support, assets bundling and minification, ad-hoc image processing and much more.
+This is mostly a bug-fix release, but it also includes several important improvements.
+Many complained that their SVG images vanished when browsed from the hugo server. With Hugo Pipes MIME types suddenly got really important, but Hugo&amp;rsquo;s use of Suffix was ambiguous.</description>
+    </item>
+    
+    <item>
+      <title>And Now: Hugo Pipes!</title>
+      <link>https://fannyvieira.github.io/personal-blog/2018/</link>
+      <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2018/</guid>
+      <description>Hugo 0.43 adds a powerful and very simple to use Assets Pipeline with SASS and SCSS with source map support, PostCSS and minification and fingerprinting and Subresource Integrity and &amp;hellip; much more. Oh, did we mention that you can now do ad-hoc image processing and execute text resources as Go templates?
+An example pipeline:
+{{ $styles := resources.Get &amp;quot;scss/main.scss&amp;quot; | toCSS | postCSS | minify | fingerprint }} &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;{{ $styles.</description>
+    </item>
+    
+    <item>
+      <title>HTTP/2 Server Push in Hugo</title>
+      <link>https://fannyvieira.github.io/personal-blog/2017/http2-server-push-in-hugo/</link>
+      <pubDate>Mon, 24 Jul 2017 18:36:00 +0200</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2017/http2-server-push-in-hugo/</guid>
+      <description>Netlify recently announced support for HTTP/2 server push, and we have now added it to the gohugo.io sites for the main CSS and JS bundles, along with server-side 301 redirect support.
+If you navigate to https://gohugo.io and look in the Chrome developer network console, you should now see Push as the new source (&amp;ldquo;Initiator&amp;rdquo;) for the CSS and JSS:
+Setting up this in Hugo was easy:
+1. Configure Netlify Output Formats Add a new custom media type and two new output formats to config.</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>https://fannyvieira.github.io/personal-blog/2014/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2014/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>https://fannyvieira.github.io/personal-blog/2014/goisforlovers/</link>
+      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2014/goisforlovers/</guid>
+      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.</description>
+    </item>
+    
+    <item>
+      <title>About Hugo</title>
+      <link>https://fannyvieira.github.io/personal-blog/about/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/about/</guid>
+      <description>Hugo is the world’s fastest framework for building websites. It is written in Go.
+It makes use of a variety of open source projects including:
+ https://github.com/russross/blackfriday https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Learn more and contribute on GitHub.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>https://fannyvieira.github.io/personal-blog/2014/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://fannyvieira.github.io/personal-blog/2014/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+  </channel>
+</rss>
