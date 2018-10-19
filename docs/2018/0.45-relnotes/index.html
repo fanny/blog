@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Covey.Liu">
+  
+  
+  
+  <link rel="prev" href="https://example.com/2018/0.44-relnotes/" />
+  <link rel="next" href="https://example.com/2018/0.45.1-relnotes/" />
+  <link rel="canonical" href="https://example.com/2018/0.45-relnotes/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Hugo 0.45: Revival of ref, relref and GetPage | Fanny&#39;s Blog
+       
+  </title>
+  <meta name="title" content="Hugo 0.45: Revival of ref, relref and GetPage | Fanny&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://example.com"
+    },
+    "articleSection" : "posts",
+    "name" : "Hugo 0.45: Revival of ref, relref and GetPage",
+    "headline" : "Hugo 0.45: Revival of ref, relref and GetPage",
+    "description" : "Hugo 0.45 adds relative page lookups, language support in ref/relref and several Hugo Pipes improvements.",
+    "inLanguage" : "en-us",
+    "author" : "Covey.Liu",
+    "creator" : "Covey.Liu",
+    "publisher": "Covey.Liu",
+    "accountablePerson" : "Covey.Liu",
+    "copyrightHolder" : "Covey.Liu",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-07-22 00:00:00 &#43;0000 UTC",
+    "dateModified" : "2018-07-22 00:00:00 &#43;0000 UTC",
+    "url" : "https://example.com/2018/0.45-relnotes/",
+    "wordCount" : "737",
+    "keywords" : [  "Fanny&#39;s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">Fanny&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">Fanny&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Hugo 0.45: Revival of ref, relref and GetPage</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://example.com" rel="author">Covey.Liu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2018-07-22 itemprop="datePublished">July 22, 2018</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://example.com/categories/releases/"> Releases </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<p>Hugo <code>0.45</code> is the <strong>revival of ref, relref and GetPage</strong>. <a href="https://github.com/vassudanagunta" rel="nofollow noreferrer" target="_blank">@vassudanagunta</a> and <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> have done some great work improving the API and implementation for the helper functions used to <strong>get one page</strong>. Before this release, the API was a little bit clumsy and the result potentially ambiguous in some situations.</p>
+
+<p>Now you can simply do:</p>
+
+<pre><code class="language-go-html-template">{{ with .Site.GetPage &quot;/blog/my-post.md&quot; }}{{ .Title }}{{ end }}
+</code></pre>
+
+<p>Or to get a section page:</p>
+
+<pre><code class="language-go-html-template">{{ with .Site.GetPage &quot;/blog&quot; }}{{ .Title }}{{ end }}
+</code></pre>
+
+<p>We have also added a <code>.GetPage</code> method on <code>Page</code> and added support for page-relative linking. This means that the leading slash (<code>/</code>) now has a meaning. For <code>.Site.GetPage</code>, all lookups will start at the content root. But for lookups with a <code>Page</code> context, paths without a leading slash will be treated as relative to the page.</p>
+
+<p>This means that the following example will find the page in the current section:</p>
+
+<pre><code class="language-go-html-template">{{&lt; ref &quot;my-post.md&quot; &gt;}}
+</code></pre>
+
+<p>You can also use the <code>..</code> to refer to a page one level up etc.:</p>
+
+<pre><code class="language-go-html-template">{{&lt; ref &quot;../my-post.md&quot; &gt;}}
+</code></pre>
+
+<p>We have now also added language support to <code>ref</code> and <code>relref</code>, so you can link to a page in another language:</p>
+
+<pre><code class="language-go-html-template">{{&lt; relref path=&quot;document.md&quot; lang=&quot;jp&quot; &gt;}}
+</code></pre>
+
+<p>To link to a given Output Format of a document, you can use this syntax:</p>
+
+<pre><code class="language-go-html-template">{{&lt; relref path=&quot;document.md&quot; outputFormat=&quot;rss&quot; &gt;}}
+</code></pre>
+
+<p>To make working with these reflinks on bigger sites easier to work with, we have also improved the error logging, and added two new configuration settings:</p>
+
+<ul>
+<li>refLinksErrorLevel: ERROR (default, will fail the build when a reflink cannot be resolved) or WARNING.</li>
+<li>refLinksNotFoundURL: Set this to an URL placeholder used when no reference could be resolved.</li>
+</ul>
+
+<p>Visit the <a href="https://gohugo.io/content-management/cross-references" rel="nofollow noreferrer" target="_blank">Hugo Docs</a> for more information.</p>
+
+<p>We have also done some important improvements and fixes in <strong>Hugo Pipes</strong> in this release: SCSS source maps on Windows now works, we now support project-local <code>PostCSS</code> installation, and we have added <code>IncludePaths</code> to <code>SCSS</code> options, making it possible to include, say, a path below <code>node_modules</code> in the SASS/SCSS build.</p>
+
+<p>This release represents <strong>31 contributions by 4 contributors</strong> to the main Hugo code base.
+<a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> leads the Hugo development with a significant amount of contributions, but also a big shoutout to <a href="https://github.com/vassudanagunta" rel="nofollow noreferrer" target="_blank">@vassudanagunta</a>, <a href="https://github.com/hairmare" rel="nofollow noreferrer" target="_blank">@hairmare</a>, and <a href="https://github.com/garrmcnu" rel="nofollow noreferrer" target="_blank">@garrmcnu</a> for their ongoing contributions.
+And a big thanks to <a href="https://github.com/digitalcraftsman" rel="nofollow noreferrer" target="_blank">@digitalcraftsman</a> for his relentless work on keeping the themes site in pristine condition and to <a href="https://github.com/kaushalmodi" rel="nofollow noreferrer" target="_blank">@kaushalmodi</a> for his great work on the documentation site.</p>
+
+<p>Many have also been busy writing and fixing the documentation in <a href="https://github.com/gohugoio/hugoDocs" rel="nofollow noreferrer" target="_blank">hugoDocs</a>,
+which has received <strong>10 contributions by 8 contributors</strong>. A special thanks to <a href="https://github.com/kaushalmodi" rel="nofollow noreferrer" target="_blank">@kaushalmodi</a>, <a href="https://github.com/Hanzei" rel="nofollow noreferrer" target="_blank">@Hanzei</a>, <a href="https://github.com/KurtTrowbridge" rel="nofollow noreferrer" target="_blank">@KurtTrowbridge</a>, and <a href="https://github.com/regisphilibert" rel="nofollow noreferrer" target="_blank">@regisphilibert</a> for their work on the documentation site.</p>
+
+<p>Hugo now has:</p>
+
+<ul>
+<li>27334+ <a href="https://github.com/gohugoio/hugo/stargazers" rel="nofollow noreferrer" target="_blank">stars</a></li>
+<li>443+ <a href="https://github.com/gohugoio/hugo/graphs/contributors" rel="nofollow noreferrer" target="_blank">contributors</a></li>
+<li>238+ <a href="http://themes.gohugo.io/" rel="nofollow noreferrer" target="_blank">themes</a></li>
+</ul>
+
+<h2 id="notes">Notes</h2>
+
+<ul>
+<li><code>.Site.GetPage</code> with more than 2 arguments will not work anymore. This means that <code>{{ .Site.GetPage &quot;page&quot; &quot;blog&quot; &quot;my-post.md&quot; }}</code> will fail. <code>{{ .Site.GetPage &quot;page&quot; &quot;blog/my-post.md&quot; }}</code> will work, but we recommend you use the simpler <code>{{ .Site.GetPage &quot;/blog/my-post.md&quot; }}</code></li>
+<li>Relative paths in <code>relref</code> or <code>ref</code> that finds its match not relative to the page itself will work, but we now print a warning saying that you should correct it to an absolute path. E.g. <code>{{&lt; ref &quot;blog/my-post.md&quot; &gt;}}</code> =&gt; <code>{{&lt; ref &quot;/blog/my-post.md&quot; &gt;}}</code>.</li>
+</ul>
+
+<h2 id="enhancements">Enhancements</h2>
+
+<ul>
+<li>Print a WARNING about relative non-relative ref/relref matches <a href="https://github.com/gohugoio/hugo/commit/a451c49fde1da6e2cc436a2b7d383ee772b1f893" rel="nofollow noreferrer" target="_blank">a451c49f</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4973" rel="nofollow noreferrer" target="_blank">#4973</a></li>
+<li>Allow untyped nil to be merged in lang.Merge <a href="https://github.com/gohugoio/hugo/commit/ff16c42ed0965e1c8acf6e6a6dcda3ea50c107f2" rel="nofollow noreferrer" target="_blank">ff16c42e</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4977" rel="nofollow noreferrer" target="_blank">#4977</a></li>
+<li>Get rid of the utils package <a href="https://github.com/gohugoio/hugo/commit/062510cf1f7b79aed2efe88c5b9340d009bdec0e" rel="nofollow noreferrer" target="_blank">062510cf</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a></li>
+<li>Update hugo_windows.go <a href="https://github.com/gohugoio/hugo/commit/4e1d0cd9f1d43d133d669a019a84117cadd41955" rel="nofollow noreferrer" target="_blank">4e1d0cd9</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a></li>
+<li>Add IncludePaths config option <a href="https://github.com/gohugoio/hugo/commit/166483fe1227b0c59c6b4d88cfdfaf7d7b0d79c5" rel="nofollow noreferrer" target="_blank">166483fe</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4921" rel="nofollow noreferrer" target="_blank">#4921</a></li>
+<li>Increase refLinker test coverage <a href="https://github.com/gohugoio/hugo/commit/8278384b9680cfdcecef9c668638ad483012857f" rel="nofollow noreferrer" target="_blank">8278384b</a> <a href="https://github.com/vassudanagunta" rel="nofollow noreferrer" target="_blank">@vassudanagunta</a></li>
+<li>Add test coverage for recent ref overhaul <a href="https://github.com/gohugoio/hugo/commit/2bac3715448e90e197ada7cc73c87f696c19def6" rel="nofollow noreferrer" target="_blank">2bac3715</a> <a href="https://github.com/vassudanagunta" rel="nofollow noreferrer" target="_blank">@vassudanagunta</a> <a href="https://github.com/gohugoio/hugo/issues/4969" rel="nofollow noreferrer" target="_blank">#4969</a></li>
+<li>Update ref, relref, GetPage docs <a href="https://github.com/gohugoio/hugo/commit/1eb8b36b3802e72bc2c16965461ef1899bb073b3" rel="nofollow noreferrer" target="_blank">1eb8b36b</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a></li>
+<li>Document refLinksErrorLevel and refLinksNotFoundURL <a href="https://github.com/gohugoio/hugo/commit/00c74ee7ffae71fd5f47d555160354a775e26151" rel="nofollow noreferrer" target="_blank">00c74ee7</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4964" rel="nofollow noreferrer" target="_blank">#4964</a></li>
+<li>Add configurable ref/relref error handling and notFoundURL <a href="https://github.com/gohugoio/hugo/commit/e25aa655f4227ac064be5fe770d517a80acd46b2" rel="nofollow noreferrer" target="_blank">e25aa655</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4964" rel="nofollow noreferrer" target="_blank">#4964</a></li>
+<li>Try node_modules/postcss-cli/bin/postcss first <a href="https://github.com/gohugoio/hugo/commit/ebe4d39f175f73e4f130972cb3d74ef0af5d5761" rel="nofollow noreferrer" target="_blank">ebe4d39f</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4952" rel="nofollow noreferrer" target="_blank">#4952</a></li>
+<li>Add optional lang as argument to rel/relref <a href="https://github.com/gohugoio/hugo/commit/d741064bebe2f4663a7ba12556dccc3dffe08629" rel="nofollow noreferrer" target="_blank">d741064b</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4956" rel="nofollow noreferrer" target="_blank">#4956</a></li>
+<li>Simplify .Site.GetPage etc. <a href="https://github.com/gohugoio/hugo/commit/3eb313fef495a39731dafa6bddbf77760090230d" rel="nofollow noreferrer" target="_blank">3eb313fe</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4147" rel="nofollow noreferrer" target="_blank">#4147</a><a href="https://github.com/gohugoio/hugo/issues/4727" rel="nofollow noreferrer" target="_blank">#4727</a><a href="https://github.com/gohugoio/hugo/issues/4728" rel="nofollow noreferrer" target="_blank">#4728</a><a href="https://github.com/gohugoio/hugo/issues/4728" rel="nofollow noreferrer" target="_blank">#4728</a><a href="https://github.com/gohugoio/hugo/issues/4726" rel="nofollow noreferrer" target="_blank">#4726</a><a href="https://github.com/gohugoio/hugo/issues/4652" rel="nofollow noreferrer" target="_blank">#4652</a></li>
+<li>Unify page lookups <a href="https://github.com/gohugoio/hugo/commit/b93417aa1d3d38a9e56bad25937e0e638a113faf" rel="nofollow noreferrer" target="_blank">b93417aa</a> <a href="https://github.com/vassudanagunta" rel="nofollow noreferrer" target="_blank">@vassudanagunta</a> <a href="https://github.com/gohugoio/hugo/issues/4147" rel="nofollow noreferrer" target="_blank">#4147</a><a href="https://github.com/gohugoio/hugo/issues/4727" rel="nofollow noreferrer" target="_blank">#4727</a><a href="https://github.com/gohugoio/hugo/issues/4728" rel="nofollow noreferrer" target="_blank">#4728</a><a href="https://github.com/gohugoio/hugo/issues/4728" rel="nofollow noreferrer" target="_blank">#4728</a><a href="https://github.com/gohugoio/hugo/issues/4726" rel="nofollow noreferrer" target="_blank">#4726</a><a href="https://github.com/gohugoio/hugo/issues/4652" rel="nofollow noreferrer" target="_blank">#4652</a></li>
+<li>Improve error message <a href="https://github.com/gohugoio/hugo/commit/4c240800a4275244c9e0847cd6707383180f1ac3" rel="nofollow noreferrer" target="_blank">4c240800</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a></li>
+<li>Remove unused code <a href="https://github.com/gohugoio/hugo/commit/2f2bc7ff70b90fb11580cc092ef3883bf68d8ad7" rel="nofollow noreferrer" target="_blank">2f2bc7ff</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a></li>
+</ul>
+
+<h2 id="fixes">Fixes</h2>
+
+<ul>
+<li>Avoid server panic on TOML mistake in i18n <a href="https://github.com/gohugoio/hugo/commit/75acff5f20d0d41ffa1ae20402001c7a82f077cb" rel="nofollow noreferrer" target="_blank">75acff5f</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4942" rel="nofollow noreferrer" target="_blank">#4942</a></li>
+<li>Only set &lsquo;allThemes&rsquo; if there are themes in the config file <a href="https://github.com/gohugoio/hugo/commit/38204c4ab6fa2aa2ab8bd06ddb3e07b66e5f9646" rel="nofollow noreferrer" target="_blank">38204c4a</a> <a href="https://github.com/garrmcnu" rel="nofollow noreferrer" target="_blank">@garrmcnu</a> <a href="https://github.com/gohugoio/hugo/issues/4851" rel="nofollow noreferrer" target="_blank">#4851</a></li>
+<li>Fix potential server panic with drafts/future enabled <a href="https://github.com/gohugoio/hugo/commit/1ab4658c0d5ea2927f04bd748206e5b139a6326e" rel="nofollow noreferrer" target="_blank">1ab4658c</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4965" rel="nofollow noreferrer" target="_blank">#4965</a></li>
+<li>Mark shortcode changes as content changes in server mode <a href="https://github.com/gohugoio/hugo/commit/12679b408362a93a3c6159588d6291a3b7ed5548" rel="nofollow noreferrer" target="_blank">12679b40</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4965" rel="nofollow noreferrer" target="_blank">#4965</a></li>
+<li>Fix source maps on Windows <a href="https://github.com/gohugoio/hugo/commit/f01505c910a325acc18742ac6b3637aa01975e37" rel="nofollow noreferrer" target="_blank">f01505c9</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4968" rel="nofollow noreferrer" target="_blank">#4968</a></li>
+<li>Fix typo-logic bug in GetPage <a href="https://github.com/gohugoio/hugo/commit/b56d9a1294e692d096bff442e0b1fec61a8c2b0f" rel="nofollow noreferrer" target="_blank">b56d9a12</a> <a href="https://github.com/vassudanagunta" rel="nofollow noreferrer" target="_blank">@vassudanagunta</a></li>
+<li>Enable test case fixed by commit 501543d4 <a href="https://github.com/gohugoio/hugo/commit/d6fde8fa131f3852fa98a8ec5c360e736486cf54" rel="nofollow noreferrer" target="_blank">d6fde8fa</a> <a href="https://github.com/vassudanagunta" rel="nofollow noreferrer" target="_blank">@vassudanagunta</a></li>
+<li>Fix theme config for Work Fs <a href="https://github.com/gohugoio/hugo/commit/5c9d5413a4e2cc8d44a8b2d7dff04e6523ba2a29" rel="nofollow noreferrer" target="_blank">5c9d5413</a> <a href="https://github.com/bep" rel="nofollow noreferrer" target="_blank">@bep</a> <a href="https://github.com/gohugoio/hugo/issues/4951" rel="nofollow noreferrer" target="_blank">#4951</a></li>
+<li>Fix addkit link to account for i18n <a href="https://github.com/gohugoio/hugo/commit/fd1f4a7860c4b989865b47c727239cf924a52fa4" rel="nofollow noreferrer" target="_blank">fd1f4a78</a> <a href="https://github.com/hairmare" rel="nofollow noreferrer" target="_blank">@hairmare</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Covey.Liu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://example.com/2018/0.45-relnotes/>https://example.com/2018/0.45-relnotes/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://example.com">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://example.com/2018/0.44-relnotes/" class="prev" rel="prev" title="Hugo 0.44: Friday the 13th Edition"><i class="iconfont icon-left"></i>&nbsp;Hugo 0.44: Friday the 13th Edition</a>
+         
+        
+        <a href="https://example.com/2018/0.45.1-relnotes/" class="next" rel="next" title="Hugo 0.45.1: Two Bug Fixes">Hugo 0.45.1: Two Bug Fixes&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2018</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">Covey.Liu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
