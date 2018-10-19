@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fanny&#39;s Blog on Fanny&#39;s Blog</title>
-    <link>https://example.com/</link>
+    <link>https://fannyvieira.github.io/personal-blog/</link>
     <description>Recent content in Fanny&#39;s Blog on Fanny&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Aug 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    <atom:link href="/personal-blog/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>This One Goes to 11!</title>
-      <link>https://example.com/2018/0.48-relnotes/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2018/0.48-relnotes/</link>
       <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2018/0.48-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2018/0.48-relnotes/</guid>
       <description>
 
 &lt;p&gt;Hugo &lt;code&gt;0.48&lt;/code&gt; is built with the brand new Go 1.11. On the technical side this means that Hugo now uses &lt;a href=&#34;https://github.com/golang/go/wiki/Modules&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Go Modules&lt;/a&gt; for the build. The big new functional thing in Go 1.11 for Hugo is added support for &lt;a href=&#34;https://github.com/golang/go/issues/10608&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;variable overwrites&lt;/a&gt;. This means that you can now do this and get the expected result:&lt;/p&gt;
@@ -70,10 +70,10 @@ which has received &lt;strong&gt;15 contributions by 12 contributors&lt;/strong&
     
     <item>
       <title>Two Bug Fixes</title>
-      <link>https://example.com/2018/0.47.1-relnotes/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2018/0.47.1-relnotes/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2018/0.47.1-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2018/0.47.1-relnotes/</guid>
       <description>
 
 &lt;p&gt;This is a bug-fix release with two fixes.&lt;/p&gt;
@@ -96,10 +96,10 @@ which has received &lt;strong&gt;15 contributions by 12 contributors&lt;/strong&
     
     <item>
       <title>Output Minification, Live-Reload Fixes and More</title>
-      <link>https://example.com/2018/0.47-relnotes/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2018/0.47-relnotes/</link>
       <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2018/0.47-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2018/0.47-relnotes/</guid>
       <description>
 
 &lt;p&gt;Hugo &lt;code&gt;0.47&lt;/code&gt; is named &lt;strong&gt;Hugo Reloaded&lt;/strong&gt;. It adds minification support for the final rendered output (run &lt;code&gt;hugo --minify&lt;/code&gt;), but it is mostly a bug fix release. And most notably, it fixes a set of issues with live-reloading/partial rebuilds when running &lt;code&gt;hugo server&lt;/code&gt;. Working with bundles should now be a more pleasant experience, to pick one example.&lt;/p&gt;
@@ -191,10 +191,10 @@ which has received &lt;strong&gt;21 contributions by 10 contributors&lt;/strong&
     
     <item>
       <title>The Summer of Hugo</title>
-      <link>https://example.com/2018/0.46-relnotes/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2018/0.46-relnotes/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2018/0.46-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2018/0.46-relnotes/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Hugo 0.46&lt;/strong&gt; is the closing credits to &lt;strong&gt;The Summer of Hugo&lt;/strong&gt;. While most people have been relaxing on the beach, Hugo has been really busy:&lt;/p&gt;
@@ -256,10 +256,10 @@ which has received &lt;strong&gt;5 contributions by 3 contributors&lt;/strong&gt
     
     <item>
       <title>Hugo 0.45.1: Two Bug Fixes</title>
-      <link>https://example.com/2018/0.45.1-relnotes/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2018/0.45.1-relnotes/</link>
       <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2018/0.45.1-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2018/0.45.1-relnotes/</guid>
       <description>
 
 &lt;p&gt;This is a bug-fix release with a couple of important fixes (and one enhancement).&lt;/p&gt;
@@ -281,10 +281,10 @@ which has received &lt;strong&gt;5 contributions by 3 contributors&lt;/strong&gt
     
     <item>
       <title>Hugo 0.45: Revival of ref, relref and GetPage</title>
-      <link>https://example.com/2018/0.45-relnotes/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2018/0.45-relnotes/</link>
       <pubDate>Sun, 22 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2018/0.45-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2018/0.45-relnotes/</guid>
       <description>
 
 &lt;p&gt;Hugo &lt;code&gt;0.45&lt;/code&gt; is the &lt;strong&gt;revival of ref, relref and GetPage&lt;/strong&gt;. &lt;a href=&#34;https://github.com/vassudanagunta&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;@vassudanagunta&lt;/a&gt; and &lt;a href=&#34;https://github.com/bep&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;@bep&lt;/a&gt; have done some great work improving the API and implementation for the helper functions used to &lt;strong&gt;get one page&lt;/strong&gt;. Before this release, the API was a little bit clumsy and the result potentially ambiguous in some situations.&lt;/p&gt;
@@ -393,10 +393,10 @@ which has received &lt;strong&gt;10 contributions by 8 contributors&lt;/strong&g
     
     <item>
       <title>Hugo 0.44: Friday the 13th Edition</title>
-      <link>https://example.com/2018/0.44-relnotes/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2018/0.44-relnotes/</link>
       <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2018/0.44-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2018/0.44-relnotes/</guid>
       <description>
 
 &lt;p&gt;Hugo &lt;code&gt;0.44&lt;/code&gt; is the follow-up release, or &lt;strong&gt;The Sequel&lt;/strong&gt;, of the very well received &lt;code&gt;0.43&lt;/code&gt; only days ago. That release added &lt;strong&gt;Hugo Pipes&lt;/strong&gt;, with SCSS/SASS support, assets bundling and minification, ad-hoc image processing and much more.&lt;/p&gt;
@@ -443,10 +443,10 @@ which has received &lt;strong&gt;10 contributions by 8 contributors&lt;/strong&g
     
     <item>
       <title>And Now: Hugo Pipes!</title>
-      <link>https://example.com/2018/0.43-relnotes/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2018/0.43-relnotes/</link>
       <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2018/0.43-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2018/0.43-relnotes/</guid>
       <description>
 
 &lt;p&gt;Hugo &lt;code&gt;0.43&lt;/code&gt; adds a powerful and very simple to use &lt;strong&gt;Assets Pipeline&lt;/strong&gt; with &lt;strong&gt;SASS and SCSS&lt;/strong&gt; with source map support, &lt;strong&gt;PostCSS&lt;/strong&gt; and &lt;strong&gt;minification&lt;/strong&gt; and &lt;strong&gt;fingerprinting&lt;/strong&gt; and &lt;strong&gt;Subresource Integrity&lt;/strong&gt; and &amp;hellip; much more. Oh, did we mention that you can now do &lt;strong&gt;ad-hoc image processing&lt;/strong&gt; and execute text resources as Go templates?&lt;/p&gt;
@@ -555,10 +555,10 @@ which has received &lt;strong&gt;11 contributions by 5 contributors&lt;/strong&g
     
     <item>
       <title>HTTP/2 Server Push in Hugo</title>
-      <link>https://example.com/2017/http2-server-push-in-hugo/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2017/http2-server-push-in-hugo/</link>
       <pubDate>Mon, 24 Jul 2017 18:36:00 +0200</pubDate>
       
-      <guid>https://example.com/2017/http2-server-push-in-hugo/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2017/http2-server-push-in-hugo/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Netlify&lt;/strong&gt; recently announced support for &lt;a href=&#34;https://www.netlify.com/blog/2017/07/18/http/2-server-push-on-netlify/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;HTTP/2 server push&lt;/a&gt;, and we have now added it to the &lt;strong&gt;gohugo.io&lt;/strong&gt; sites for the main &lt;code&gt;CSS&lt;/code&gt; and &lt;code&gt;JS&lt;/code&gt; bundles, along with server-side 301 redirect support.&lt;/p&gt;
@@ -569,7 +569,7 @@ which has received &lt;strong&gt;11 contributions by 5 contributors&lt;/strong&g
 
 &lt;h2 id=&#34;1-configure-netlify-output-formats&#34;&gt;1. Configure Netlify Output Formats&lt;/h2&gt;
 
-&lt;p&gt;Add a new custom media type and two new output formats to &lt;code&gt;config.toml&lt;/code&gt;. For more on output formats in Hugo, see &lt;a href=&#34;https://example.com/templates/output-formats/&#34;&gt;Custom Output Formats&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Add a new custom media type and two new output formats to &lt;code&gt;config.toml&lt;/code&gt;. For more on output formats in Hugo, see &lt;a href=&#34;https://fannyvieira.github.io/personal-blog/templates/output-formats/&#34;&gt;Custom Output Formats&lt;/a&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[outputs]
 home = [ &amp;quot;HTML&amp;quot;, &amp;quot;RSS&amp;quot;, &amp;quot;REDIR&amp;quot;, &amp;quot;HEADERS&amp;quot; ]
@@ -622,16 +622,16 @@ notAlternative = true
 {{- end -}}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The template above creates 301 redirects for your &lt;a href=&#34;https://example.com/content-management/urls/#aliases&#34;&gt;aliases&lt;/a&gt;, so you will probably want to turn off aliases in your &lt;code&gt;config.toml&lt;/code&gt;: &lt;code&gt;disableAliases = true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The template above creates 301 redirects for your &lt;a href=&#34;https://fannyvieira.github.io/personal-blog/content-management/urls/#aliases&#34;&gt;aliases&lt;/a&gt;, so you will probably want to turn off aliases in your &lt;code&gt;config.toml&lt;/code&gt;: &lt;code&gt;disableAliases = true&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Creating a New Theme</title>
-      <link>https://example.com/2014/creating-a-new-theme/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2014/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2014/creating-a-new-theme/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2014/creating-a-new-theme/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -1730,10 +1730,10 @@ $ vi themes/zafta/layouts/_default/single.html
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>https://example.com/2014/goisforlovers/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2014/goisforlovers/</link>
       <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2014/goisforlovers/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2014/goisforlovers/</guid>
       <description>
 
 &lt;p&gt;Hugo uses the excellent &lt;a href=&#34;http://golang.org/&amp;gt;&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;go&lt;/a&gt; &lt;a href=&#34;http://golang.org/pkg/html/template/&amp;gt;&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;html/template&lt;/a&gt; library for
@@ -1792,7 +1792,7 @@ functions.&lt;/p&gt;
 &lt;p&gt;Each go template has a struct (object) made available to it. In hugo each
 template is passed either a page or a node struct depending on which type of
 page you are rendering. More details are available on the
-&lt;a href=&#34;https://example.com/layout/variables&#34;&gt;variables&lt;/a&gt; page.&lt;/p&gt;
+&lt;a href=&#34;https://fannyvieira.github.io/personal-blog/layout/variables&#34;&gt;variables&lt;/a&gt; page.&lt;/p&gt;
 
 &lt;p&gt;A variable is accessed by referencing the variable name.&lt;/p&gt;
 
@@ -1809,7 +1809,7 @@ page you are rendering. More details are available on the
 
 &lt;p&gt;Go template ship with a few functions which provide basic functionality. The go
 template system also provides a mechanism for applications to extend the
-available functions with their own. &lt;a href=&#34;https://example.com/layout/functions&#34;&gt;Hugo template
+available functions with their own. &lt;a href=&#34;https://fannyvieira.github.io/personal-blog/layout/functions&#34;&gt;Hugo template
 functions&lt;/a&gt; provide some additional functionality we believe
 are useful for building websites. Functions are called by using their name
 followed by the required parameters separated by spaces. Template
@@ -1997,7 +1997,7 @@ you want to inside of your templates.&lt;/p&gt;
 &lt;h2 id=&#34;using-content-page-parameters&#34;&gt;Using Content (page) Parameters&lt;/h2&gt;
 
 &lt;p&gt;In each piece of content you can provide variables to be used by the
-templates. This happens in the &lt;a href=&#34;https://example.com/content/front-matter&#34;&gt;front matter&lt;/a&gt;.&lt;/p&gt;
+templates. This happens in the &lt;a href=&#34;https://fannyvieira.github.io/personal-blog/content/front-matter&#34;&gt;front matter&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;An example of this is used in this documentation site. Most of the pages
 benefit from having the table of contents provided. Sometimes the TOC just
@@ -2076,10 +2076,10 @@ so, such as in this example:&lt;/p&gt;
     
     <item>
       <title>About Hugo</title>
-      <link>https://example.com/about/</link>
+      <link>https://fannyvieira.github.io/personal-blog/about/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/about/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/about/</guid>
       <description>&lt;p&gt;Hugo is the &lt;strong&gt;world’s fastest framework for building websites&lt;/strong&gt;. It is written in Go.&lt;/p&gt;
 
 &lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
@@ -2098,10 +2098,10 @@ so, such as in this example:&lt;/p&gt;
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://example.com/2014/hugoisforlovers/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2014/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2014/hugoisforlovers/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2014/hugoisforlovers/</guid>
       <description>
 
 &lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;
@@ -2111,7 +2111,7 @@ appropriate version for your os and architecture.&lt;/p&gt;
 
 &lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;
 
-&lt;p&gt;More complete instructions are available at &lt;a href=&#34;https://example.com/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;More complete instructions are available at &lt;a href=&#34;https://fannyvieira.github.io/personal-blog/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;step-2-build-the-docs&#34;&gt;Step 2. Build the Docs&lt;/h2&gt;
 
@@ -2185,10 +2185,10 @@ Having nearly instant feedback enables you to have your creativity flow without 
     
     <item>
       <title>Migrate to Hugo from Jekyll</title>
-      <link>https://example.com/2014/migrate-from-jekyll/</link>
+      <link>https://fannyvieira.github.io/personal-blog/2014/migrate-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2014/migrate-from-jekyll/</guid>
+      <guid>https://fannyvieira.github.io/personal-blog/2014/migrate-from-jekyll/</guid>
       <description>
 
 &lt;h2 id=&#34;move-static-content-to-static&#34;&gt;Move static content to &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;
@@ -2213,7 +2213,7 @@ With Jekyll, something that looked like&lt;/p&gt;
 
 &lt;h2 id=&#34;create-your-hugo-configuration-file&#34;&gt;Create your Hugo configuration file&lt;/h2&gt;
 
-&lt;p&gt;Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the &lt;a href=&#34;https://example.com/overview/configuration/&#34;&gt;Hugo configuration documentation&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the &lt;a href=&#34;https://fannyvieira.github.io/personal-blog/overview/configuration/&#34;&gt;Hugo configuration documentation&lt;/a&gt; for details.&lt;/p&gt;
 
 &lt;h2 id=&#34;set-your-configuration-publish-folder-to-site&#34;&gt;Set your configuration publish folder to &lt;code&gt;_site&lt;/code&gt;&lt;/h2&gt;
 
@@ -2239,13 +2239,13 @@ git submodule add -b gh-pages git@github.com:your-username/your-repo.git public
 
 &lt;h2 id=&#34;convert-jekyll-templates-to-hugo-templates&#34;&gt;Convert Jekyll templates to Hugo templates&lt;/h2&gt;
 
-&lt;p&gt;That&amp;rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to &lt;a href=&#34;http://jekyllrb.com/docs/templates/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Jekyll&amp;rsquo;s template documentation&lt;/a&gt; if you need to refresh your memory on how you built your blog and &lt;a href=&#34;https://example.com/layout/templates/&#34;&gt;Hugo&amp;rsquo;s template&lt;/a&gt; to learn Hugo&amp;rsquo;s way.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to &lt;a href=&#34;http://jekyllrb.com/docs/templates/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Jekyll&amp;rsquo;s template documentation&lt;/a&gt; if you need to refresh your memory on how you built your blog and &lt;a href=&#34;https://fannyvieira.github.io/personal-blog/layout/templates/&#34;&gt;Hugo&amp;rsquo;s template&lt;/a&gt; to learn Hugo&amp;rsquo;s way.&lt;/p&gt;
 
 &lt;p&gt;As a single reference data point, converting my templates for &lt;a href=&#34;http://heyitsalex.net/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;heyitsalex.net&lt;/a&gt; took me no more than a few hours.&lt;/p&gt;
 
 &lt;h2 id=&#34;convert-jekyll-plugins-to-hugo-shortcodes&#34;&gt;Convert Jekyll plugins to Hugo shortcodes&lt;/h2&gt;
 
-&lt;p&gt;Jekyll has &lt;a href=&#34;http://jekyllrb.com/docs/plugins/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;plugins&lt;/a&gt;; Hugo has &lt;a href=&#34;https://example.com/doc/shortcodes/&#34;&gt;shortcodes&lt;/a&gt;. It&amp;rsquo;s fairly trivial to do a port.&lt;/p&gt;
+&lt;p&gt;Jekyll has &lt;a href=&#34;http://jekyllrb.com/docs/plugins/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;plugins&lt;/a&gt;; Hugo has &lt;a href=&#34;https://fannyvieira.github.io/personal-blog/doc/shortcodes/&#34;&gt;shortcodes&lt;/a&gt;. It&amp;rsquo;s fairly trivial to do a port.&lt;/p&gt;
 
 &lt;h3 id=&#34;implementation&#34;&gt;Implementation&lt;/h3&gt;
 
