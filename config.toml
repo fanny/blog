@@ -1,4 +1,5 @@
 baseURL = "https://fannyvieira.github.io/personal-blog"
+publishDir = "docs"
 languageCode = "en-us"
 title = "Fanny's Blog"
 theme = "LeaveIt"
