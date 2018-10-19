@@ -127,7 +127,6 @@ is written as this Hugo shortcode:
         </figcaption>
         {{ end }}
     </figure>
-    <!-- image -->
 
 ### Usage
 I simply changed:
