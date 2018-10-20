@@ -66,5 +66,4 @@ preserveTaxonomyNames = true
     # Wechat = "/images/me/wechat.png"  # Wechat QRcode image
     Telegram = "fannyvieira"
     Medium = "fannyvieira"
-    # LastFm = "fannyvieira25"
-    SoundCloud = "fanny-vieira" 
+  
