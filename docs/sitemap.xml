@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2018/0.48-relnotes/</loc>
+      <loc>https://fannyvieira.github.io/blog/2018/0.48-relnotes/</loc>
       
       <lastmod>2018-08-29T00:00:00+00:00</lastmod>
       
@@ -13,7 +13,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2018/0.47.1-relnotes/</loc>
+      <loc>https://fannyvieira.github.io/blog/2018/0.47.1-relnotes/</loc>
       
       <lastmod>2018-08-20T00:00:00+00:00</lastmod>
       
@@ -23,7 +23,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2018/0.47-relnotes/</loc>
+      <loc>https://fannyvieira.github.io/blog/2018/0.47-relnotes/</loc>
       
       <lastmod>2018-08-17T00:00:00+00:00</lastmod>
       
@@ -33,7 +33,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2018/0.46-relnotes/</loc>
+      <loc>https://fannyvieira.github.io/blog/2018/0.46-relnotes/</loc>
       
       <lastmod>2018-08-01T00:00:00+00:00</lastmod>
       
@@ -43,7 +43,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2018/0.45.1-relnotes/</loc>
+      <loc>https://fannyvieira.github.io/blog/2018/0.45.1-relnotes/</loc>
       
       <lastmod>2018-07-25T00:00:00+00:00</lastmod>
       
@@ -53,7 +53,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2018/0.45-relnotes/</loc>
+      <loc>https://fannyvieira.github.io/blog/2018/0.45-relnotes/</loc>
       
       <lastmod>2018-07-22T00:00:00+00:00</lastmod>
       
@@ -63,7 +63,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2018/0.44-relnotes/</loc>
+      <loc>https://fannyvieira.github.io/blog/2018/0.44-relnotes/</loc>
       
       <lastmod>2018-07-13T00:00:00+00:00</lastmod>
       
@@ -73,7 +73,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2018/0.43-relnotes/</loc>
+      <loc>https://fannyvieira.github.io/blog/2018/0.43-relnotes/</loc>
       
       <lastmod>2018-07-09T00:00:00+00:00</lastmod>
       
@@ -83,7 +83,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2017/http2-server-push-in-hugo/</loc>
+      <loc>https://fannyvieira.github.io/blog/2017/http2-server-push-in-hugo/</loc>
       
       <lastmod>2017-07-24T18:36:00+02:00</lastmod>
       
@@ -93,7 +93,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2014/creating-a-new-theme/</loc>
+      <loc>https://fannyvieira.github.io/blog/2014/creating-a-new-theme/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
       
@@ -103,7 +103,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2014/goisforlovers/</loc>
+      <loc>https://fannyvieira.github.io/blog/2014/goisforlovers/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -113,7 +113,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/about/</loc>
+      <loc>https://fannyvieira.github.io/blog/about/</loc>
       
       <lastmod>2014-04-09T00:00:00+00:00</lastmod>
       
@@ -123,7 +123,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2014/hugoisforlovers/</loc>
+      <loc>https://fannyvieira.github.io/blog/2014/hugoisforlovers/</loc>
       
       <lastmod>2014-04-02T00:00:00+00:00</lastmod>
       
@@ -133,7 +133,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/2014/migrate-from-jekyll/</loc>
+      <loc>https://fannyvieira.github.io/blog/2014/migrate-from-jekyll/</loc>
       
       <lastmod>2014-03-10T00:00:00+00:00</lastmod>
       
@@ -143,7 +143,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/categories/</loc>
+      <loc>https://fannyvieira.github.io/blog/categories/</loc>
       
       
       
@@ -153,7 +153,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/</loc>
+      <loc>https://fannyvieira.github.io/blog/</loc>
       
       <lastmod>2018-08-29T00:00:00+00:00</lastmod>
       
@@ -165,7 +165,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/tags/hugo/</loc>
+      <loc>https://fannyvieira.github.io/blog/tags/hugo/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
       
@@ -177,7 +177,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/posts/news/</loc>
+      <loc>https://fannyvieira.github.io/blog/posts/news/</loc>
       
       <lastmod>2018-08-29T00:00:00+00:00</lastmod>
       
@@ -187,7 +187,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/posts/</loc>
+      <loc>https://fannyvieira.github.io/blog/posts/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
       
@@ -199,7 +199,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/categories/releases/</loc>
+      <loc>https://fannyvieira.github.io/blog/categories/releases/</loc>
       
       <lastmod>2018-08-29T00:00:00+00:00</lastmod>
       
@@ -211,7 +211,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/tags/</loc>
+      <loc>https://fannyvieira.github.io/blog/tags/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
       
@@ -223,7 +223,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/tags/theme/</loc>
+      <loc>https://fannyvieira.github.io/blog/tags/theme/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
       
@@ -235,7 +235,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/categories/uncategorized/</loc>
+      <loc>https://fannyvieira.github.io/blog/categories/uncategorized/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
       
@@ -247,7 +247,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/categories/blog/</loc>
+      <loc>https://fannyvieira.github.io/blog/categories/blog/</loc>
       
       <lastmod>2017-07-24T18:36:00+02:00</lastmod>
       
@@ -259,7 +259,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/tags/development/</loc>
+      <loc>https://fannyvieira.github.io/blog/tags/development/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -271,7 +271,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/tags/go/</loc>
+      <loc>https://fannyvieira.github.io/blog/tags/go/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -283,7 +283,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/tags/golang/</loc>
+      <loc>https://fannyvieira.github.io/blog/tags/golang/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -295,7 +295,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/tags/hugo/</loc>
+      <loc>https://fannyvieira.github.io/blog/tags/hugo/</loc>
       
       <lastmod>2014-04-02T00:00:00+00:00</lastmod>
       
@@ -307,7 +307,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/tags/templates/</loc>
+      <loc>https://fannyvieira.github.io/blog/tags/templates/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       
@@ -319,7 +319,7 @@
     </url>
   
     <url>
-      <loc>https://fannyvieira.github.io/personal-blog/tags/themes/</loc>
+      <loc>https://fannyvieira.github.io/blog/tags/themes/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
       

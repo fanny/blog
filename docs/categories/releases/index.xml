@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Releases on Fanny&#39;s Blog</title>
-    <link>https://fannyvieira.github.io/personal-blog/categories/releases/</link>
+    <link>https://fannyvieira.github.io/blog/categories/releases/</link>
     <description>Recent content in Releases on Fanny&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://fannyvieira.github.io/personal-blog/categories/releases/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fannyvieira.github.io/blog/categories/releases/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>This One Goes to 11!</title>
-      <link>https://fannyvieira.github.io/personal-blog/2018/0.48-relnotes/</link>
+      <link>https://fannyvieira.github.io/blog/2018/0.48-relnotes/</link>
       <pubDate>Wed, 29 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fannyvieira.github.io/personal-blog/2018/0.48-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/blog/2018/0.48-relnotes/</guid>
       <description>Hugo 0.48 is built with the brand new Go 1.11. On the technical side this means that Hugo now uses Go Modules for the build. The big new functional thing in Go 1.11 for Hugo is added support for variable overwrites. This means that you can now do this and get the expected result:
 {{ $var := &amp;quot;Hugo Page&amp;quot; }} {{ if .IsHome }} {{ $var = &amp;quot;Hugo Home&amp;quot; }} {{ end }} Var is {{ $var }}  The above may look obvious, but has not been possible until now.</description>
     </item>
     
     <item>
       <title>Two Bug Fixes</title>
-      <link>https://fannyvieira.github.io/personal-blog/2018/0.47.1-relnotes/</link>
+      <link>https://fannyvieira.github.io/blog/2018/0.47.1-relnotes/</link>
       <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fannyvieira.github.io/personal-blog/2018/0.47.1-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/blog/2018/0.47.1-relnotes/</guid>
       <description> This is a bug-fix release with two fixes.
 Fixes  Fix .Site.Params case regression fdff0d3a @bep #5094 Do not strip IE conditional statements 5a0ee2b9 @bep #5089  Updates to Linux Snap build  Remove unused files from Git, Perl, etc. 834617f9 @anthonyfok Add nodejs to allow PostCSS to work ef20ec1f @anthonyfok  </description>
     </item>
     
     <item>
       <title>Output Minification, Live-Reload Fixes and More</title>
-      <link>https://fannyvieira.github.io/personal-blog/2018/0.47-relnotes/</link>
+      <link>https://fannyvieira.github.io/blog/2018/0.47-relnotes/</link>
       <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fannyvieira.github.io/personal-blog/2018/0.47-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/blog/2018/0.47-relnotes/</guid>
       <description>Hugo 0.47 is named Hugo Reloaded. It adds minification support for the final rendered output (run hugo --minify), but it is mostly a bug fix release. And most notably, it fixes a set of issues with live-reloading/partial rebuilds when running hugo server. Working with bundles should now be a more pleasant experience, to pick one example.
 This release represents 35 contributions by 6 contributors to the main Hugo code base.</description>
     </item>
     
     <item>
       <title>The Summer of Hugo</title>
-      <link>https://fannyvieira.github.io/personal-blog/2018/0.46-relnotes/</link>
+      <link>https://fannyvieira.github.io/blog/2018/0.46-relnotes/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fannyvieira.github.io/personal-blog/2018/0.46-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/blog/2018/0.46-relnotes/</guid>
       <description>Hugo 0.46 is the closing credits to The Summer of Hugo. While most people have been relaxing on the beach, Hugo has been really busy:
  0.42, June 12, 2018: Theme Composition and Inheritance! 0.43, July 9, 2018: Hugo Pipes!  This was followed by some more technical follow-up releases. And today, when July has turned into August, we come with another one. It&amp;rsquo;s not a big release. But with the big interest in Hugo Pipes, we felt that it was important to get this out there sooner rather than later.</description>
     </item>
     
     <item>
       <title>Hugo 0.45.1: Two Bug Fixes</title>
-      <link>https://fannyvieira.github.io/personal-blog/2018/0.45.1-relnotes/</link>
+      <link>https://fannyvieira.github.io/blog/2018/0.45.1-relnotes/</link>
       <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fannyvieira.github.io/personal-blog/2018/0.45.1-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/blog/2018/0.45.1-relnotes/</guid>
       <description> This is a bug-fix release with a couple of important fixes (and one enhancement).
 Enhancements  Add Page.FirstSection 016dd4a6 @bep  Fixes  Fix .Site.GetPage regression 04d4c08d @bep #4989 Fix &amp;ldquo;borrow content from another language&amp;rdquo; issue c6b599a0 @bep #4986  </description>
     </item>
     
     <item>
       <title>Hugo 0.45: Revival of ref, relref and GetPage</title>
-      <link>https://fannyvieira.github.io/personal-blog/2018/0.45-relnotes/</link>
+      <link>https://fannyvieira.github.io/blog/2018/0.45-relnotes/</link>
       <pubDate>Sun, 22 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fannyvieira.github.io/personal-blog/2018/0.45-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/blog/2018/0.45-relnotes/</guid>
       <description>Hugo 0.45 is the revival of ref, relref and GetPage. @vassudanagunta and @bep have done some great work improving the API and implementation for the helper functions used to get one page. Before this release, the API was a little bit clumsy and the result potentially ambiguous in some situations.
 Now you can simply do:
 {{ with .Site.GetPage &amp;quot;/blog/my-post.md&amp;quot; }}{{ .Title }}{{ end }}  Or to get a section page:</description>
@@ -74,10 +74,10 @@ Now you can simply do:
     
     <item>
       <title>Hugo 0.44: Friday the 13th Edition</title>
-      <link>https://fannyvieira.github.io/personal-blog/2018/0.44-relnotes/</link>
+      <link>https://fannyvieira.github.io/blog/2018/0.44-relnotes/</link>
       <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fannyvieira.github.io/personal-blog/2018/0.44-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/blog/2018/0.44-relnotes/</guid>
       <description>Hugo 0.44 is the follow-up release, or The Sequel, of the very well received 0.43 only days ago. That release added Hugo Pipes, with SCSS/SASS support, assets bundling and minification, ad-hoc image processing and much more.
 This is mostly a bug-fix release, but it also includes several important improvements.
 Many complained that their SVG images vanished when browsed from the hugo server. With Hugo Pipes MIME types suddenly got really important, but Hugo&amp;rsquo;s use of Suffix was ambiguous.</description>
@@ -85,10 +85,10 @@ Many complained that their SVG images vanished when browsed from the hugo server
     
     <item>
       <title>And Now: Hugo Pipes!</title>
-      <link>https://fannyvieira.github.io/personal-blog/2018/0.43-relnotes/</link>
+      <link>https://fannyvieira.github.io/blog/2018/0.43-relnotes/</link>
       <pubDate>Mon, 09 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://fannyvieira.github.io/personal-blog/2018/0.43-relnotes/</guid>
+      <guid>https://fannyvieira.github.io/blog/2018/0.43-relnotes/</guid>
       <description>Hugo 0.43 adds a powerful and very simple to use Assets Pipeline with SASS and SCSS with source map support, PostCSS and minification and fingerprinting and Subresource Integrity and &amp;hellip; much more. Oh, did we mention that you can now do ad-hoc image processing and execute text resources as Go templates?
 An example pipeline:
 {{ $styles := resources.Get &amp;quot;scss/main.scss&amp;quot; | toCSS | postCSS | minify | fingerprint }} &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;{{ $styles.</description>
