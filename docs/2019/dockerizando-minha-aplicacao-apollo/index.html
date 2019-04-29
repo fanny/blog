@@ -57,7 +57,7 @@
     "datePublished": "2019-04-28 22:30:24 -0300 -03",
     "dateModified" : "2019-04-28 22:30:24 -0300 -03",
     "url" : "https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/",
-    "wordCount" : "1478",
+    "wordCount" : "1651",
     "keywords" : [ "Docker","Apollo","Apollo-Server","Development", "Fanny&#39;s Blog"]
 }
 </script>
@@ -157,7 +157,8 @@
 
 <p>Durante meu processo de aprendizagem do docker, eu encontrei um <a href="https://dev.to/azure/docker---from-the-beginning-part-i-28c6" rel="nofollow noreferrer" target="_blank">tutorial fantástico</a> que me ajudou a entender muitos dos conceitos que eu tinha dificuldade. Então, eu decidi traduzi-lo pra que outras pessoas também pudessem ter essa mesma experiência, além disso, alguns amigos que fazem projeto comigo, não entendiam a configuração de docker que eu fiz, como uma forma de ajudá-los, decidi criar um tutorial inspirado nesse primeiro, que conseguisse cobrir todos os tópicos e funcionalidades usadas.</p>
 
-<p>Muito obrigada, @softchris, você fez um trabalho íncrivel! &lt;3</p>
+<p>Muito obrigada, <a href="https://dev.to/softchris" rel="nofollow noreferrer" target="_blank">@softchris</a>, você fez um trabalho íncrivel! &lt;3<br />
+<em>Thank you, so much, <a href="https://dev.to/softchris" rel="nofollow noreferrer" target="_blank">@softchris</a>, you did an incredible job! &lt;3</em></p>
 
 <p>Então, vamos lá.</p>
 
@@ -180,7 +181,7 @@
 <h2 id="e-por-quê-você-iria-querer-isso">E por quê você iria querer isso?</h2>
 
 <p><strong>Integração do time com novos desenvolvedores</strong>.  A maioria dos times pode passar pelo processo de integrar um desenvolvedor a um projeto que já existe, e pode ser um processo traumático  para ele ter que instalar SDK’s, ferramentas de desenvolvimento, banco de dados,adicionar permissões, muitas vezes chegando a levar semanas.<br />
-<strong>Ambientes com a mesma configuração</strong>. É muito comum querer reproduzir o ambiente de produção no de desenvolvimento, muitas vezes, quando a configuração não é a mesma, pode ser difícil mapear o motivo dos erros, porque o problema pode ter sido pelo ambiente de execução. Usando o Docker, você pode criar um ambiente DEV, STAGING e PRODUÇÃO, todos com a mesma aparência.<br />
+<strong>Ambientes com a mesma configuração</strong>. É muito comum querer reproduzir o ambiente de produção no de desenvolvimento, muitas vezes, quando a configuração não é a mesma, pode ser difícil mapear o motivo dos erros, porque o problema pode ter sido pelo ambiente de execução. Usando o Docker, você pode criar um ambiente DEV, STAGING e PRODUÇÃO, todos com as mesmas definições.<br />
 <strong>O famoso jargão &ldquo;Funciona na minha máquina&rdquo;</strong>. O docker criar contêineres isolados, onde você especifica exatamente o que eles devem conter, você pode enviar esses containers aos clientes e eles irão funcionar da mesma forma que na sua máquina de desenvolvimento.</p>
 
 <h2 id="o-que-é-o-docker">O que é o docker?</h2>
@@ -195,7 +196,7 @@
 
 <h2 id="docker-em-ação">Docker em ação</h2>
 
-<p>Hummm, certo, nós já vimos o que é o Docker e seus benefícios, nós também entendemos que o que executa nossa aplicação é chamado de container. Mas como nós fazemos isso? Bem, nós começamos definindo um arquivo de descrição, chamado de <em>DockerFile</em>. Neste <em>DockerFile</em>, nós especificamos tudo que nós precisamos em termos de OS, variáveis de ambiente, e como conseguimos colocar nossa aplicação lá.</p>
+<p>Hummm, certo, nós já vimos o que é o Docker e seus benefícios, nós também entendemos que o que executa nossa aplicação é chamado de container. Mas como nós fazemos isso? Bem, nós começamos definindo um arquivo de descrição, chamado de <em>DockerFile</em>. Neste <em>DockerFile</em>, nós especificamos tudo que precisamos em termos de SO, variáveis de ambiente, e como conseguimos colocar nossa aplicação lá.</p>
 
 <p>Para fazer isso, seguimos os seguintes passos:</p>
 
@@ -210,36 +211,63 @@
 
 <p>Certo, o próximo passo é definir nosso dockerfile. Esse arquivo atua como um manifest, mas também como um arquivo de instrução de como fazer o build, em que nós podemos levantar nossa aplicação e executar. Ok, então o que nós precisamos para ter isso?</p>
 
-<p><strong>copiar</strong> todos os arquivos do nosso app para o container do docker
-<strong>instalar</strong> as dependências
-<strong>expor uma porta</strong>, que possa ser acessada de fora do container
-<strong>instruir</strong>, o container sobre como iniciar nossa aplicação</p>
+<ol>
+<li><strong>copiar</strong> todos os arquivos do nosso app para o container do docker<br /></li>
+<li><strong>instalar</strong> as dependências<br /></li>
+<li><strong>expor uma porta</strong>, que possa ser acessada de fora do container<br /></li>
+<li><strong>instruir</strong>, o container sobre como iniciar nossa aplicação<br /></li>
+</ol>
 
-<p>Em aplicações mais complexas, nós podemos precisar fazer coisas como setar variáveis de ambiente, ou credenciais para um banco de dados, usar <code>seeds</code> para popular nosso banco de dados. Mas para agora, nós só precisamos das coisas que descremos acima, Então vamos expressar isso no nosso Dockerfile:</p>
+<p>Em aplicações mais complexas, nós podemos precisar fazer outras coisas, como setar variáveis de ambiente, ou credenciais para um banco de dados, usar <code>seeds</code> para popular nosso banco de dados. Mas para agora, nós só precisamos das coisas que descrevemos acima, Então vamos expressar isso no nosso Dockerfile:</p>
 
-<p>// CODE</p>
+<pre><code class="language-Dockerfile">FROM node:latest
+
+WORKDIR /server
+
+COPY . .
+
+ENV PORT 5000
+
+RUN npm install
+
+EXPOSE $PORT
+
+ENTRYPOINT [&quot;npm&quot;, &quot;start&quot;]
+</code></pre>
 
 <p><strong>FROM</strong> Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. Docker Hub é um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag :latest<br />
-<strong>WORKDIR</strong> Isso simplesmente significa que nós estamos configurando um diretório de trabalho. Isso é uma maneira de definir onde nossos arquivos ficaram no container.<br />
-<strong>COPY</strong> Aqui nós copiamos os arquivos do diretório atual, para o diretório que acabamos de criar com o WORKDIR<br />
-<strong>RUN</strong> Isso executa um comando no terminal, no nosso caso, queremos instalar as bibliotecas necessárias para construir nosso apollo-server<br />
+<strong>WORKDIR</strong> Isso simplesmente significa que nós estamos configurando um diretório de trabalho. Isso é uma maneira de definir onde nossos arquivos ficarão no container.<br />
+<strong>COPY</strong> Aqui nós copiamos os arquivos do diretório atual, para o diretório que acabamos de criar com o <code>WORKDIR</code>.<br />
+<strong>RUN</strong> Isso executa um comando no terminal, no nosso caso, queremos instalar as bibliotecas necessárias para construir nosso apollo-server, por isso, usamos o <code>npm install</code>.
 <strong>EXPOSE</strong> Isso significa que estamos expondo uma porta, e é através dessa porta que vamos nos comunicar com o nosso container.<br />
 <strong>ENTRYPOINT</strong> Isso representa o comando que precisamos executar para inicializar nossa aplicação, os comandos precisam ser especificados como um array, no nosso caso, isso será traduzido como <code>npm start</code></p>
 
 <h2 id="construindo-uma-imagem">Construindo uma imagem</h2>
 
-<p>Há dois passos que precisamos implementar para levantar e executar nosso container, eles são:
-Criação de uma imagem, com a ajuda do Dockerfile e do comando docker build nós criaremos uma imagem
-Execução do container, Agora que temos uma imagem,  precisamos criar um container.</p>
+<p>Há dois passos que precisamos implementar para levantar e executar nosso container, eles são:</p>
+
+<p><strong>Criação de uma imagem</strong>, com a ajuda do <code>Dockerfile</code> e do comando <code>docker build</code> nós criaremos uma imagem.<br />
+<strong>Execução do container</strong>, Agora que temos uma imagem, precisamos criar um container.</p>
+
+<p>Antes de tudo, você deve estar se perguntando, certo, mas o que é uma imagem, porque eu preciso dela?</p>
+
+<p>Como minha amiga, <a href="https://github.com/thayannevls" rel="nofollow noreferrer" target="_blank">@thayannevls</a> diz:</p>
+
+<blockquote>
+<p>&ldquo;Pense na imagem como uma classe, e o container como um objeto em Orientação a Objeto(OO)&rdquo;</p>
+</blockquote>
+
+<p>Certo, vamos analisar essa frase, por que a imagem representa uma classe. Quando falamos em classes, pensamos num template no qual definimos atributos e comportamentos da nossa entidade. Uma imagem, é definida pelo <code>Dockerfile</code>, que como vimos, é onde instruímos, como o docker deve fazer o build, muitas vezes só usamos as imagens prontas que estão definidas no repositório do docker, o <a href="https://hub.docker.com/" rel="nofollow noreferrer" target="_blank">Dockerhub</a>, e as vezes pegamos imagens prontas e fazemos modificações, como é o nosso caso. E o nosso container, é justamente a nossa imagem em execução, daí a analogia com os objetos.</p>
 
 <p>Primeiro de tudo, vamos criar nossa imagem com o seguinte comando:</p>
 
 <blockquote>
-<p>docker build -t chrisnoring/node:latest .</p>
+<p>docker build -t panelinhadees/server:0.1.0 .</p>
 </blockquote>
 
-<p>A instrução acima cria uma imagem. O . no final é importante, como o docker instrui, e serve para especficar aonde o dockerfile está localizado, nesse caso, no diretório que você está. Se você não tiver a imagem colocada no dockerfile(usando o comando FROM), no nosso caso, a do docker, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso
-// TERMINAL</p>
+<p>A instrução acima cria uma imagem. O <code>.</code> no final é importante, serve para especficar aonde o dockerfile está localizado, nesse caso, no mesmo diretório que você está. Se você não tiver a imagem definida no dockerfile(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.</p>
+
+<p>// TERMINAL</p>
 
 <p>O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado WORKDIR, RUN, e os outros. No final, nós vemos sucessfuly built que é nossa sugetsão de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:</p>
 
@@ -253,20 +281,21 @@ Execução do container, Agora que temos uma imagem,  precisamos criar um contai
 
 <p>O próximo passo é pegar nossa imagem e construir um container a partir dela. Um container é essa peça isolada que executa nossa aplicação dentro dele. Nós construimos um container usando o comando docker run. O comando completo se parece com:</p>
 
-<p>docker run chrisnoring/node</p>
+<p><code>docker run panelinhadees/server:0.1.0</code></p>
 
-<p>Mas isso não é o suficiente, precisamos mapear a nossa porta interna a externa, da nossa máquina host. Lembre-se que esse é um app que queremos interagir atraves do nosso browser. nós podemos mapear usando a flag -p</p>
+<p>Mas isso não é o suficiente, precisamos mapear a nossa porta interna a externa, da nossa máquina host. Lembre-se que esse é um app que queremos interagir atraves do nosso browser. Nós podemos mapear usando a flag -p</p>
 
-<p>-p [external port]:[internal port]</p>
+<p><code>-p [external port]:[internal port]</code></p>
 
-<p>Agora o comando completo, se parece com:
-docker run -p 8000:3000 chrisnoring/node</p>
+<p>Agora o comando completo, se parece com:</p>
 
-<p>Ok, executando esse comando significa que nós conseguiremos visitar nosso container  indo <a href="http://localhost:8000" rel="nofollow noreferrer" target="_blank">http://localhost:8000</a>, 8000 é a nossa porta externa lembre-se que isso mapea para a ponta interna 3000. Bora ver, abra o browser:</p>
+<p><code>docker run -p 8000:5000 panelinhadees/server:0.1.0</code></p>
+
+<p>Ok, executando esse comando significa que nós conseguiremos visitar nosso container através da url <a href="http://localhost:8000" rel="nofollow noreferrer" target="_blank">http://localhost:8000</a>, <code>8000</code> é a nossa porta externa, lembre-se que o comando acima mapea 8000 para a ponta interna 3000. Bora ver, abrindo o browser temos:</p>
 
 <p>// image</p>
 
-<p>É isto, temos um container pipous! :D</p>
+<p>É isto, temos nossa app no ar, pipous! :D</p>
 
     </div>
 
