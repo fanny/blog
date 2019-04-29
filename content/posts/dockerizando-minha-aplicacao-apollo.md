@@ -1,8 +1,8 @@
 ---
-title: "Dockerizando Minha Aplicacao Apollo"
+title: "Dockerizando Minha Aplicação Apollo"
 date: 2019-04-28T22:30:24-03:00
 tags: ["Docker", "Apollo", "Apollo-Server", "Development"]
-author: "Michael Henderson"
+author: "Fanny Vieira"
 categories: ["Uncategorized"]
 ---
 // MUSIC INTRODUCTIONN
