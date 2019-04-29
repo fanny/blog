@@ -17,10 +17,7 @@
       <pubDate>Sun, 28 Apr 2019 22:30:24 -0300</pubDate>
       
       <guid>https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/</guid>
-      <description>// MUSIC INTRODUCTIONN
-Neste artigo, iremos cobrir os seguintes tópicos:
-O que é Docker e por quê usá-lo? Essa é provavelmente uma das partes mais importantes do artigo, por quê o Docker? Por quê não usar outras tecnologias? Tentarei explicar o quê é docker e em que ele consiste.
-“Dockerizando” uma aplicação. Vamos dockerizar uma aplicação para mostrar o que entendemos e podemos usar com os principais conceitos do docker.</description>
+      <description>// MUSIC INTRODUCTION  Durante meu processo de aprendizagem do docker, eu encontrei um tutorial fantástico que me ajudou a entender muitos dos conceitos que eu tinha dificuldade. Então, eu decidi traduzi-lo pra que outras pessoas também pudessem ter essa mesma experiência, além disso, alguns amigos que fazem projeto comigo, não entendiam a configuração de docker que eu fiz, como uma forma de ajudá-los, decidi criar um tutorial inspirado nesse primeiro, que conseguisse cobrir todos os tópicos e funcionalidades usadas.</description>
     </item>
     
   </channel>
