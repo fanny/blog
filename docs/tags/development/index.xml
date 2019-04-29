@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>development on Fanny&#39;s Blog</title>
-    <link>https://fannyvieira.github.io/blog/tags/development/</link>
-    <description>Recent content in development on Fanny&#39;s Blog</description>
+    <title>Development on Fanny&#39;s Blog</title>
+    <link>https://fanny.github.io/blog/tags/development/</link>
+    <description>Recent content in Development on Fanny&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Jul 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 22:30:24 -0300</lastBuildDate>
     
-	<atom:link href="https://fannyvieira.github.io/blog/tags/development/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://fanny.github.io/blog/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://fannyvieira.github.io/blog/2014/goisforlovers/</link>
-      <pubDate>Mon, 28 Jul 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://fannyvieira.github.io/blog/2014/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
-    </item>
     
     <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://fannyvieira.github.io/blog/2014/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Dockerizando Minha Aplicacao Apollo</title>
+      <link>https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/</link>
+      <pubDate>Sun, 28 Apr 2019 22:30:24 -0300</pubDate>
       
-      <guid>https://fannyvieira.github.io/blog/2014/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+      <guid>https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/</guid>
+      <description>// MUSIC INTRODUCTIONN
+Neste artigo, iremos cobrir os seguintes tópicos:
+O que é Docker e por quê usá-lo? Essa é provavelmente uma das partes mais importantes do artigo, por quê o Docker? Por quê não usar outras tecnologias? Tentarei explicar o quê é docker e em que ele consiste.
+“Dockerizando” uma aplicação. Vamos dockerizar uma aplicação para mostrar o que entendemos e podemos usar com os principais conceitos do docker.</description>
     </item>
     
   </channel>

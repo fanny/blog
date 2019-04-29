@@ -6,9 +6,46 @@
     <description>Recent content in Tags on Fanny&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2019 22:30:24 -0300</lastBuildDate>
     
 	<atom:link href="https://fanny.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Apollo</title>
+      <link>https://fanny.github.io/blog/tags/apollo/</link>
+      <pubDate>Sun, 28 Apr 2019 22:30:24 -0300</pubDate>
+      
+      <guid>https://fanny.github.io/blog/tags/apollo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apollo-Server</title>
+      <link>https://fanny.github.io/blog/tags/apollo-server/</link>
+      <pubDate>Sun, 28 Apr 2019 22:30:24 -0300</pubDate>
+      
+      <guid>https://fanny.github.io/blog/tags/apollo-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://fanny.github.io/blog/tags/development/</link>
+      <pubDate>Sun, 28 Apr 2019 22:30:24 -0300</pubDate>
+      
+      <guid>https://fanny.github.io/blog/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://fanny.github.io/blog/tags/docker/</link>
+      <pubDate>Sun, 28 Apr 2019 22:30:24 -0300</pubDate>
+      
+      <guid>https://fanny.github.io/blog/tags/docker/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

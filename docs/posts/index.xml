@@ -6,9 +6,22 @@
     <description>Recent content in Posts on Fanny&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2019 22:30:24 -0300</lastBuildDate>
     
 	<atom:link href="https://fanny.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dockerizando Minha Aplicacao Apollo</title>
+      <link>https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/</link>
+      <pubDate>Sun, 28 Apr 2019 22:30:24 -0300</pubDate>
+      
+      <guid>https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/</guid>
+      <description>// MUSIC INTRODUCTIONN
+Neste artigo, iremos cobrir os seguintes tópicos:
+O que é Docker e por quê usá-lo? Essa é provavelmente uma das partes mais importantes do artigo, por quê o Docker? Por quê não usar outras tecnologias? Tentarei explicar o quê é docker e em que ele consiste.
+“Dockerizando” uma aplicação. Vamos dockerizar uma aplicação para mostrar o que entendemos e podemos usar com os principais conceitos do docker.</description>
+    </item>
     
   </channel>
 </rss>
