@@ -17,8 +17,11 @@
       <guid>https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/</guid>
       <description>
 
-&lt;pre&gt;&lt;code&gt;    // MUSIC INTRODUCTION
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Além de computação, eu amo música, e em todo post meu, vou te recomendar um álbum/música de artista que estou conhecendo ou que já ouvi e gostei muito, tá bem?&lt;/p&gt;
+
+&lt;p&gt;Enquanto eu escrevo, esse post, estou ouvindo uma música do &lt;a href=&#34;https://pt.wikipedia.org/wiki/Iron_%26_Wine&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Iron &amp;amp; Wine&lt;/a&gt;, a &amp;ldquo;Such Great Heights&amp;rdquo;, eles tem um estilo de folk rock, a primeira vez que escutei ele, foi em uma cena de &lt;a href=&#34;https://pt.wikipedia.org/wiki/Crep%C3%BAsculo&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;crepúsculo&lt;/a&gt;, desde aquele momento, eu senti uma paz, uma sensação boa de aconchego, como se eu quisesse abraçar eu mesma,e tudo estivesse bem, sabe? Eles são muito bons pra ouvir quando você quer ter um momento de conexão consigo mesmo, então fica aí a sugestão.&lt;/p&gt;
+
+&lt;iframe src=&#34;https://open.spotify.com/embed/track/6kLqKntp2x4QVXHwqLHMYm&#34; width=&#34;300&#34; height=&#34;380&#34; frameborder=&#34;0&#34; allowtransparency=&#34;true&#34; allow=&#34;encrypted-media&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;Durante meu processo de aprendizagem do docker, eu encontrei um &lt;a href=&#34;https://dev.to/azure/docker---from-the-beginning-part-i-28c6&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;tutorial fantástico&lt;/a&gt; que me ajudou a entender muitos dos conceitos que eu tinha dificuldade. Então, eu decidi traduzi-lo pra que outras pessoas também pudessem ter essa mesma experiência, além disso, alguns amigos que fazem projeto comigo, não entendiam a configuração de docker que eu fiz, como uma forma de ajudá-los, decidi criar um tutorial inspirado nesse primeiro, que conseguisse cobrir todos os tópicos e funcionalidades usadas.&lt;/p&gt;
 
@@ -100,10 +103,10 @@ EXPOSE $PORT
 ENTRYPOINT [&amp;quot;npm&amp;quot;, &amp;quot;start&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;strong&gt;FROM&lt;/strong&gt; Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. Docker Hub é um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag :latest&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;FROM&lt;/strong&gt; Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. &lt;a href=&#34;https://hub.docker.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Docker Hub&lt;/a&gt; um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag &lt;code&gt;:latest&lt;/code&gt;&lt;br /&gt;
 &lt;strong&gt;WORKDIR&lt;/strong&gt; Isso simplesmente significa que nós estamos configurando um diretório de trabalho. Isso é uma maneira de definir onde nossos arquivos ficarão no container.&lt;br /&gt;
 &lt;strong&gt;COPY&lt;/strong&gt; Aqui nós copiamos os arquivos do diretório atual, para o diretório que acabamos de criar com o &lt;code&gt;WORKDIR&lt;/code&gt;.&lt;br /&gt;
-&lt;strong&gt;RUN&lt;/strong&gt; Isso executa um comando no terminal, no nosso caso, queremos instalar as bibliotecas necessárias para construir nosso apollo-server, por isso, usamos o &lt;code&gt;npm install&lt;/code&gt;.
+&lt;strong&gt;RUN&lt;/strong&gt; Isso executa um comando no terminal, no nosso caso, queremos instalar as bibliotecas necessárias para construir nosso apollo-server, por isso, usamos o &lt;code&gt;npm install&lt;/code&gt;.&lt;br /&gt;
 &lt;strong&gt;EXPOSE&lt;/strong&gt; Isso significa que estamos expondo uma porta, e é através dessa porta que vamos nos comunicar com o nosso container.&lt;br /&gt;
 &lt;strong&gt;ENTRYPOINT&lt;/strong&gt; Isso representa o comando que precisamos executar para inicializar nossa aplicação, os comandos precisam ser especificados como um array, no nosso caso, isso será traduzido como &lt;code&gt;npm start&lt;/code&gt;&lt;/p&gt;
 
@@ -122,43 +125,42 @@ ENTRYPOINT [&amp;quot;npm&amp;quot;, &amp;quot;start&amp;quot;]
 &lt;p&gt;&amp;ldquo;Pense na imagem como uma classe, e o container como um objeto em Orientação a Objeto(OO)&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Certo, vamos analisar essa frase, por que a imagem representa uma classe. Quando falamos em classes, pensamos num template no qual definimos atributos e comportamentos da nossa entidade. Uma imagem, é definida pelo &lt;code&gt;Dockerfile&lt;/code&gt;, que como vimos, é onde instruímos, como o docker deve fazer o build, muitas vezes só usamos as imagens prontas que estão definidas no repositório do docker, o &lt;a href=&#34;https://hub.docker.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Dockerhub&lt;/a&gt;, e as vezes pegamos imagens prontas e fazemos modificações, como é o nosso caso. E o nosso container, é justamente a nossa imagem em execução, daí a analogia com os objetos.&lt;/p&gt;
+&lt;p&gt;Certo, vamos analisar essa frase, por que a imagem representa uma classe? Quando falamos em classes, pensamos num template no qual definimos atributos e comportamentos da nossa entidade. Uma imagem, é definida pelo &lt;code&gt;Dockerfile&lt;/code&gt;, que como vimos, é onde instruímos, como o docker deve fazer o build, muitas vezes só usamos as imagens prontas que estão definidas no repositório do docker, o Dockerhub, e as vezes pegamos imagens prontas e fazemos modificações, como é o nosso caso. E o nosso container, é justamente a nossa imagem em execução, daí a analogia com os objetos.&lt;/p&gt;
 
 &lt;p&gt;Primeiro de tudo, vamos criar nossa imagem com o seguinte comando:&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;docker build -t panelinhadees/server:0.1.0 .&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;docker build -f .docker/node.dockerfile .&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;A instrução acima cria uma imagem. O &lt;code&gt;.&lt;/code&gt; no final é importante, serve para especficar aonde o dockerfile está localizado, nesse caso, no mesmo diretório que você está. Se você não tiver a imagem definida no dockerfile(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.&lt;/p&gt;
+&lt;p&gt;A instrução acima cria uma imagem. O &lt;code&gt;.&lt;/code&gt; no final é importante, serve para especficar que o diretório raiz da app, é o que estamos atualmente, a opção &lt;code&gt;-f&lt;/code&gt; dockerfile está localizado, nesse caso, no diretório &lt;code&gt;.docker/&lt;/code&gt;. Se você não tiver a imagem definida no &lt;code&gt;Dockerfile&lt;/code&gt;(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.&lt;/p&gt;
 
-&lt;p&gt;// TERMINAL&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;OBS: Caso o dockerfile estivesse no diretório atual, executaríamos o seguinte:&lt;/em&gt;
+&lt;code&gt;docker build -t panelinhadees/server:0.1.0 .&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado WORKDIR, RUN, e os outros. No final, nós vemos sucessfuly built que é nossa sugetsão de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/KTt1Hro.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;docker images&lt;/p&gt;
+&lt;p&gt;O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado, WORKDIR, RUN, e os outros. No final, nós vemos &amp;ldquo;sucessfuly built&amp;rdquo; que é um ínicio de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:&lt;/p&gt;
 
-&lt;p&gt;// IMAGE LIST&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;docker images&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Nós temos uma imagem, só sucesso! :)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/rw2cyVO.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;criando-um-container&#34;&gt;Criando um container&lt;/h2&gt;
 
 &lt;p&gt;O próximo passo é pegar nossa imagem e construir um container a partir dela. Um container é essa peça isolada que executa nossa aplicação dentro dele. Nós construimos um container usando o comando docker run. O comando completo se parece com:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;docker run panelinhadees/server:0.1.0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;docker run ID_IMAGE&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;Mas isso não é o suficiente, precisamos mapear a nossa porta interna a externa, da nossa máquina host. Lembre-se que esse é um app que queremos interagir atraves do nosso browser. Nós podemos mapear usando a flag -p&lt;/p&gt;
+&lt;p&gt;Mas isso não é o suficiente, precisamos mapear a nossa porta interna à externa, da nossa máquina host. Lembre-se que esse é um app que queremos interagir atraves do nosso browser. Nós podemos mapear usando a flag -p&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;-p [external port]:[internal port]&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Agora o comando completo, se parece com:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;docker run -p 8000:5000 panelinhadees/server:0.1.0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;docker run -p 8000:5000 ID_IMAGE&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Ok, executando esse comando significa que nós conseguiremos visitar nosso container através da url &lt;a href=&#34;http://localhost:8000&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;http://localhost:8000&lt;/a&gt;, &lt;code&gt;8000&lt;/code&gt; é a nossa porta externa, lembre-se que o comando acima mapea 8000 para a ponta interna 3000. Bora ver, abrindo o browser temos:&lt;/p&gt;
 
-&lt;p&gt;// image&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.imgur.com/N780k5Q.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;É isto, temos nossa app no ar, pipous! :D&lt;/p&gt;
 </description>

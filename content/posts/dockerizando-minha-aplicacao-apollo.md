@@ -6,9 +6,11 @@ author: "Fanny Vieira"
 categories: ["Uncategorized"]
 ---
 
-```
-    // MUSIC INTRODUCTION
-```
+Além de computação, eu amo música, e em todo post meu, vou te recomendar um álbum/música de artista que estou conhecendo ou que já ouvi e gostei muito, tá bem?
+
+Enquanto eu escrevo, esse post, estou ouvindo uma música do [Iron & Wine](https://pt.wikipedia.org/wiki/Iron_%26_Wine), a "Such Great Heights", eles tem um estilo de folk rock, a primeira vez que escutei ele, foi em uma cena de [crepúsculo](https://pt.wikipedia.org/wiki/Crep%C3%BAsculo), desde aquele momento, eu senti uma paz, uma sensação boa de aconchego, como se eu quisesse abraçar eu mesma,e tudo estivesse bem, sabe? Eles são muito bons pra ouvir quando você quer ter um momento de conexão consigo mesmo, então fica aí a sugestão.
+
+<iframe src="https://open.spotify.com/embed/track/6kLqKntp2x4QVXHwqLHMYm" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 Durante meu processo de aprendizagem do docker, eu encontrei um [tutorial fantástico](https://dev.to/azure/docker---from-the-beginning-part-i-28c6) que me ajudou a entender muitos dos conceitos que eu tinha dificuldade. Então, eu decidi traduzi-lo pra que outras pessoas também pudessem ter essa mesma experiência, além disso, alguns amigos que fazem projeto comigo, não entendiam a configuração de docker que eu fiz, como uma forma de ajudá-los, decidi criar um tutorial inspirado nesse primeiro, que conseguisse cobrir todos os tópicos e funcionalidades usadas.
 
@@ -92,10 +94,10 @@ ENTRYPOINT ["npm", "start"]
 ```
 
 
-**FROM** Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. Docker Hub é um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag :latest  
+**FROM** Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. [Docker Hub](https://hub.docker.com/) um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag `:latest`  
 **WORKDIR** Isso simplesmente significa que nós estamos configurando um diretório de trabalho. Isso é uma maneira de definir onde nossos arquivos ficarão no container.  
 **COPY** Aqui nós copiamos os arquivos do diretório atual, para o diretório que acabamos de criar com o `WORKDIR`.  
-**RUN** Isso executa um comando no terminal, no nosso caso, queremos instalar as bibliotecas necessárias para construir nosso apollo-server, por isso, usamos o `npm install`.
+**RUN** Isso executa um comando no terminal, no nosso caso, queremos instalar as bibliotecas necessárias para construir nosso apollo-server, por isso, usamos o `npm install`.  
 **EXPOSE** Isso significa que estamos expondo uma porta, e é através dessa porta que vamos nos comunicar com o nosso container.  
 **ENTRYPOINT** Isso representa o comando que precisamos executar para inicializar nossa aplicação, os comandos precisam ser especificados como um array, no nosso caso, isso será traduzido como `npm start`
 
@@ -113,40 +115,41 @@ Como minha amiga, [@thayannevls](https://github.com/thayannevls) diz:
 
 > "Pense na imagem como uma classe, e o container como um objeto em Orientação a Objeto(OO)"
 
-Certo, vamos analisar essa frase, por que a imagem representa uma classe. Quando falamos em classes, pensamos num template no qual definimos atributos e comportamentos da nossa entidade. Uma imagem, é definida pelo `Dockerfile`, que como vimos, é onde instruímos, como o docker deve fazer o build, muitas vezes só usamos as imagens prontas que estão definidas no repositório do docker, o [Dockerhub](https://hub.docker.com/), e as vezes pegamos imagens prontas e fazemos modificações, como é o nosso caso. E o nosso container, é justamente a nossa imagem em execução, daí a analogia com os objetos.
+Certo, vamos analisar essa frase, por que a imagem representa uma classe? Quando falamos em classes, pensamos num template no qual definimos atributos e comportamentos da nossa entidade. Uma imagem, é definida pelo `Dockerfile`, que como vimos, é onde instruímos, como o docker deve fazer o build, muitas vezes só usamos as imagens prontas que estão definidas no repositório do docker, o Dockerhub, e as vezes pegamos imagens prontas e fazemos modificações, como é o nosso caso. E o nosso container, é justamente a nossa imagem em execução, daí a analogia com os objetos.
 
 Primeiro de tudo, vamos criar nossa imagem com o seguinte comando:
 
-> docker build -t panelinhadees/server:0.1.0 .
+`docker build -f .docker/node.dockerfile .`
 
-A instrução acima cria uma imagem. O `.` no final é importante, serve para especficar aonde o dockerfile está localizado, nesse caso, no mesmo diretório que você está. Se você não tiver a imagem definida no dockerfile(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.
+A instrução acima cria uma imagem. O `.` no final é importante, serve para especficar que o diretório raiz da app, é o que estamos atualmente, a opção `-f` dockerfile está localizado, nesse caso, no diretório `.docker/`. Se você não tiver a imagem definida no `Dockerfile`(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.
 
-// TERMINAL
+*OBS: Caso o dockerfile estivesse no diretório atual, executaríamos o seguinte:*
+`docker build -t panelinhadees/server:0.1.0 .`
 
-O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado WORKDIR, RUN, e os outros. No final, nós vemos sucessfuly built que é nossa sugetsão de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:
+![](https://i.imgur.com/KTt1Hro.png)
 
-docker images
+O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado, WORKDIR, RUN, e os outros. No final, nós vemos "sucessfuly built" que é um ínicio de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:
 
-// IMAGE LIST
+`docker images`
 
-Nós temos uma imagem, só sucesso! :)
+![](https://i.imgur.com/rw2cyVO.png)
 
 ## Criando um container
 
 O próximo passo é pegar nossa imagem e construir um container a partir dela. Um container é essa peça isolada que executa nossa aplicação dentro dele. Nós construimos um container usando o comando docker run. O comando completo se parece com:
 
-`docker run panelinhadees/server:0.1.0`
+`docker run ID_IMAGE`
 
-Mas isso não é o suficiente, precisamos mapear a nossa porta interna a externa, da nossa máquina host. Lembre-se que esse é um app que queremos interagir atraves do nosso browser. Nós podemos mapear usando a flag -p
+Mas isso não é o suficiente, precisamos mapear a nossa porta interna à externa, da nossa máquina host. Lembre-se que esse é um app que queremos interagir atraves do nosso browser. Nós podemos mapear usando a flag -p
 
 `-p [external port]:[internal port]`
 
 Agora o comando completo, se parece com:
 
-`docker run -p 8000:5000 panelinhadees/server:0.1.0`
+`docker run -p 8000:5000 ID_IMAGE`
 
 Ok, executando esse comando significa que nós conseguiremos visitar nosso container através da url http://localhost:8000, `8000` é a nossa porta externa, lembre-se que o comando acima mapea 8000 para a ponta interna 3000. Bora ver, abrindo o browser temos:
 
-// image
+![](https://i.imgur.com/N780k5Q.png)
 
 É isto, temos nossa app no ar, pipous! :D

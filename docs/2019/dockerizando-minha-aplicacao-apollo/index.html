@@ -46,7 +46,8 @@
     "articleSection" : "posts",
     "name" : "Dockerizando Minha Aplicação Apollo",
     "headline" : "Dockerizando Minha Aplicação Apollo",
-    "description" : "// MUSIC INTRODUCTION  Durante meu processo de aprendizagem do docker, eu encontrei um tutorial fantástico que me ajudou a entender muitos dos conceitos que eu tinha dificuldade. Então, eu decidi traduzi-lo pra que outras pessoas também pudessem ter essa mesma experiência, além disso, alguns amigos que fazem projeto comigo, não entendiam a configuração de docker que eu fiz, como uma forma de ajudá-los, decidi criar um tutorial inspirado nesse primeiro, que conseguisse cobrir todos os tópicos e funcionalidades usadas.",
+    "description" : "Além de computação, eu amo música, e em todo post meu, vou te recomendar um álbum/música de artista que estou conhecendo ou que já ouvi e gostei muito, tá bem?
+Enquanto eu escrevo, esse post, estou ouvindo uma música do Iron &amp; Wine, a &ldquo;Such Great Heights&rdquo;, eles tem um estilo de folk rock, a primeira vez que escutei ele, foi em uma cena de crepúsculo, desde aquele momento, eu senti uma paz, uma sensação boa de aconchego, como se eu quisesse abraçar eu mesma,e tudo estivesse bem, sabe?",
     "inLanguage" : "en-us",
     "author" : "Fanny Vieira",
     "creator" : "Fanny Vieira",
@@ -57,7 +58,7 @@
     "datePublished": "2019-04-28 22:30:24 -0300 -03",
     "dateModified" : "2019-04-28 22:30:24 -0300 -03",
     "url" : "https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/",
-    "wordCount" : "1651",
+    "wordCount" : "1768",
     "keywords" : [ "Docker","Apollo","Apollo-Server","Development", "Fanny&#39;s Blog"]
 }
 </script>
@@ -138,6 +139,8 @@
         
 
         
+            
+        
 
         
         
@@ -152,8 +155,11 @@
 
           
 
-<pre><code>    // MUSIC INTRODUCTION
-</code></pre>
+<p>Além de computação, eu amo música, e em todo post meu, vou te recomendar um álbum/música de artista que estou conhecendo ou que já ouvi e gostei muito, tá bem?</p>
+
+<p>Enquanto eu escrevo, esse post, estou ouvindo uma música do <a href="https://pt.wikipedia.org/wiki/Iron_%26_Wine" rel="nofollow noreferrer" target="_blank">Iron &amp; Wine</a>, a &ldquo;Such Great Heights&rdquo;, eles tem um estilo de folk rock, a primeira vez que escutei ele, foi em uma cena de <a href="https://pt.wikipedia.org/wiki/Crep%C3%BAsculo" rel="nofollow noreferrer" target="_blank">crepúsculo</a>, desde aquele momento, eu senti uma paz, uma sensação boa de aconchego, como se eu quisesse abraçar eu mesma,e tudo estivesse bem, sabe? Eles são muito bons pra ouvir quando você quer ter um momento de conexão consigo mesmo, então fica aí a sugestão.</p>
+
+<iframe src="https://open.spotify.com/embed/track/6kLqKntp2x4QVXHwqLHMYm" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 <p>Durante meu processo de aprendizagem do docker, eu encontrei um <a href="https://dev.to/azure/docker---from-the-beginning-part-i-28c6" rel="nofollow noreferrer" target="_blank">tutorial fantástico</a> que me ajudou a entender muitos dos conceitos que eu tinha dificuldade. Então, eu decidi traduzi-lo pra que outras pessoas também pudessem ter essa mesma experiência, além disso, alguns amigos que fazem projeto comigo, não entendiam a configuração de docker que eu fiz, como uma forma de ajudá-los, decidi criar um tutorial inspirado nesse primeiro, que conseguisse cobrir todos os tópicos e funcionalidades usadas.</p>
 
@@ -235,10 +241,10 @@ EXPOSE $PORT
 ENTRYPOINT [&quot;npm&quot;, &quot;start&quot;]
 </code></pre>
 
-<p><strong>FROM</strong> Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. Docker Hub é um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag :latest<br />
+<p><strong>FROM</strong> Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. <a href="https://hub.docker.com/" rel="nofollow noreferrer" target="_blank">Docker Hub</a> um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag <code>:latest</code><br />
 <strong>WORKDIR</strong> Isso simplesmente significa que nós estamos configurando um diretório de trabalho. Isso é uma maneira de definir onde nossos arquivos ficarão no container.<br />
 <strong>COPY</strong> Aqui nós copiamos os arquivos do diretório atual, para o diretório que acabamos de criar com o <code>WORKDIR</code>.<br />
-<strong>RUN</strong> Isso executa um comando no terminal, no nosso caso, queremos instalar as bibliotecas necessárias para construir nosso apollo-server, por isso, usamos o <code>npm install</code>.
+<strong>RUN</strong> Isso executa um comando no terminal, no nosso caso, queremos instalar as bibliotecas necessárias para construir nosso apollo-server, por isso, usamos o <code>npm install</code>.<br />
 <strong>EXPOSE</strong> Isso significa que estamos expondo uma porta, e é através dessa porta que vamos nos comunicar com o nosso container.<br />
 <strong>ENTRYPOINT</strong> Isso representa o comando que precisamos executar para inicializar nossa aplicação, os comandos precisam ser especificados como um array, no nosso caso, isso será traduzido como <code>npm start</code></p>
 
@@ -257,43 +263,42 @@ ENTRYPOINT [&quot;npm&quot;, &quot;start&quot;]
 <p>&ldquo;Pense na imagem como uma classe, e o container como um objeto em Orientação a Objeto(OO)&rdquo;</p>
 </blockquote>
 
-<p>Certo, vamos analisar essa frase, por que a imagem representa uma classe. Quando falamos em classes, pensamos num template no qual definimos atributos e comportamentos da nossa entidade. Uma imagem, é definida pelo <code>Dockerfile</code>, que como vimos, é onde instruímos, como o docker deve fazer o build, muitas vezes só usamos as imagens prontas que estão definidas no repositório do docker, o <a href="https://hub.docker.com/" rel="nofollow noreferrer" target="_blank">Dockerhub</a>, e as vezes pegamos imagens prontas e fazemos modificações, como é o nosso caso. E o nosso container, é justamente a nossa imagem em execução, daí a analogia com os objetos.</p>
+<p>Certo, vamos analisar essa frase, por que a imagem representa uma classe? Quando falamos em classes, pensamos num template no qual definimos atributos e comportamentos da nossa entidade. Uma imagem, é definida pelo <code>Dockerfile</code>, que como vimos, é onde instruímos, como o docker deve fazer o build, muitas vezes só usamos as imagens prontas que estão definidas no repositório do docker, o Dockerhub, e as vezes pegamos imagens prontas e fazemos modificações, como é o nosso caso. E o nosso container, é justamente a nossa imagem em execução, daí a analogia com os objetos.</p>
 
 <p>Primeiro de tudo, vamos criar nossa imagem com o seguinte comando:</p>
 
-<blockquote>
-<p>docker build -t panelinhadees/server:0.1.0 .</p>
-</blockquote>
+<p><code>docker build -f .docker/node.dockerfile .</code></p>
 
-<p>A instrução acima cria uma imagem. O <code>.</code> no final é importante, serve para especficar aonde o dockerfile está localizado, nesse caso, no mesmo diretório que você está. Se você não tiver a imagem definida no dockerfile(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.</p>
+<p>A instrução acima cria uma imagem. O <code>.</code> no final é importante, serve para especficar que o diretório raiz da app, é o que estamos atualmente, a opção <code>-f</code> dockerfile está localizado, nesse caso, no diretório <code>.docker/</code>. Se você não tiver a imagem definida no <code>Dockerfile</code>(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.</p>
 
-<p>// TERMINAL</p>
+<p><em>OBS: Caso o dockerfile estivesse no diretório atual, executaríamos o seguinte:</em>
+<code>docker build -t panelinhadees/server:0.1.0 .</code></p>
 
-<p>O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado WORKDIR, RUN, e os outros. No final, nós vemos sucessfuly built que é nossa sugetsão de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://i.imgur.com/KTt1Hro.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 
-<p>docker images</p>
+<p>O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado, WORKDIR, RUN, e os outros. No final, nós vemos &ldquo;sucessfuly built&rdquo; que é um ínicio de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:</p>
 
-<p>// IMAGE LIST</p>
+<p><code>docker images</code></p>
 
-<p>Nós temos uma imagem, só sucesso! :)</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://i.imgur.com/rw2cyVO.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 
 <h2 id="criando-um-container">Criando um container</h2>
 
 <p>O próximo passo é pegar nossa imagem e construir um container a partir dela. Um container é essa peça isolada que executa nossa aplicação dentro dele. Nós construimos um container usando o comando docker run. O comando completo se parece com:</p>
 
-<p><code>docker run panelinhadees/server:0.1.0</code></p>
+<p><code>docker run ID_IMAGE</code></p>
 
-<p>Mas isso não é o suficiente, precisamos mapear a nossa porta interna a externa, da nossa máquina host. Lembre-se que esse é um app que queremos interagir atraves do nosso browser. Nós podemos mapear usando a flag -p</p>
+<p>Mas isso não é o suficiente, precisamos mapear a nossa porta interna à externa, da nossa máquina host. Lembre-se que esse é um app que queremos interagir atraves do nosso browser. Nós podemos mapear usando a flag -p</p>
 
 <p><code>-p [external port]:[internal port]</code></p>
 
 <p>Agora o comando completo, se parece com:</p>
 
-<p><code>docker run -p 8000:5000 panelinhadees/server:0.1.0</code></p>
+<p><code>docker run -p 8000:5000 ID_IMAGE</code></p>
 
 <p>Ok, executando esse comando significa que nós conseguiremos visitar nosso container através da url <a href="http://localhost:8000" rel="nofollow noreferrer" target="_blank">http://localhost:8000</a>, <code>8000</code> é a nossa porta externa, lembre-se que o comando acima mapea 8000 para a ponta interna 3000. Bora ver, abrindo o browser temos:</p>
 
-<p>// image</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://i.imgur.com/N780k5Q.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 
 <p>É isto, temos nossa app no ar, pipous! :D</p>
 
@@ -389,8 +394,9 @@ ENTRYPOINT [&quot;npm&quot;, &quot;start&quot;]
 
 
     
-    
-    <script src="/blog/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/blog/js/vendor_gallery.min.js" async="" ></script>
     
   
 
