@@ -153,3 +153,13 @@ Ok, executando esse comando significa que nós conseguiremos visitar nosso conta
 ![](https://i.imgur.com/N780k5Q.png)
 
 É isto, temos nossa app no ar, pipous! :D
+
+
+## Referências & Links para estudo
+
+https://docker-curriculum.com/#getting-started
+
+https://docs.docker.com/get-started/
+
+https://dev.to/softchris/5-part-docker-series-beginner-to-master-3m1b
+

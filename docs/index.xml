@@ -163,6 +163,14 @@ ENTRYPOINT [&amp;quot;npm&amp;quot;, &amp;quot;start&amp;quot;]
 &lt;p&gt;&lt;img src=&#34;https://i.imgur.com/N780k5Q.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;É isto, temos nossa app no ar, pipous! :D&lt;/p&gt;
+
+&lt;h2 id=&#34;referências-links-para-estudo&#34;&gt;Referências &amp;amp; Links para estudo&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docker-curriculum.com/#getting-started&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://docker-curriculum.com/#getting-started&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/get-started/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://docs.docker.com/get-started/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://dev.to/softchris/5-part-docker-series-beginner-to-master-3m1b&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://dev.to/softchris/5-part-docker-series-beginner-to-master-3m1b&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
