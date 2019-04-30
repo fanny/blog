@@ -8,7 +8,7 @@ categories: ["Uncategorized"]
 
 Além de computação, eu amo música, e em todo post meu, vou te recomendar um álbum/música de artista que estou conhecendo ou que já ouvi e gostei muito, tá bem?
 
-Enquanto eu escrevo, esse post, estou ouvindo uma música do [Iron & Wine](https://pt.wikipedia.org/wiki/Iron_%26_Wine), a "Such Great Heights", eles tem um estilo de folk rock, a primeira vez que escutei ele, foi em uma cena de [crepúsculo](https://pt.wikipedia.org/wiki/Crep%C3%BAsculo), desde aquele momento, eu senti uma paz, uma sensação boa de aconchego, como se eu quisesse abraçar eu mesma,e tudo estivesse bem, sabe? Eles são muito bons pra ouvir quando você quer ter um momento de conexão consigo mesmo, então fica aí a sugestão.
+Enquanto eu escrevo, esse post, estou ouvindo uma música do [Iron & Wine](https://pt.wikipedia.org/wiki/Iron_%26_Wine), a "Such Great Heights", eles tem um estilo de folk rock, muito amorzinho. A primeira vez que escutei ele, foi em uma [cena de crepúsculo](https://www.youtube.com/watch?v=H732zJgRDt4), quando eu ouvi eu senti uma paz, uma sensação boa de aconchego, como se eu quisesse abraçar eu mesma, e tudo estivesse bem, sabe? Eles são muito bons pra ouvir quando você quer ter um momento de conexão consigo mesmo, então fica aí a sugestão.
 
 <iframe src="https://open.spotify.com/embed/track/6kLqKntp2x4QVXHwqLHMYm" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
