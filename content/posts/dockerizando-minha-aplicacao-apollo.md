@@ -27,8 +27,6 @@ Neste artigo, iremos cobrir os seguintes tópicos:
 
 **Dockerizando nossa aplicação**. Vamos dockerizar uma aplicação para mostrar o que entendemos e podemos usar com os principais conceitos do docker.
 
-**Gerenciando o container**. Agora é muito fácil subir um container, mas também precisamos aprender a gerenciá-lo, já que não queremos que ele fique executando pra sempre.
-
 Essa é a primeira parte da série, nos próximos posts pretendemos abordar, volumes, linkamento, microsserviços, e orquestração.
 
 ## Por quê usar o docker?
@@ -37,8 +35,8 @@ O docker te ajuda a criar um ambiente reproduzível. Você consegue especificar 
 
 ## E por quê você iria querer isso?
 
-**Integração do time com novos desenvolvedores**.  A maioria dos times pode passar pelo processo de integrar um desenvolvedor a um projeto que já existe, e pode ser um processo traumático  para ele ter que instalar SDK’s, ferramentas de desenvolvimento, banco de dados,adicionar permissões, muitas vezes chegando a levar semanas.  
-**Ambientes com a mesma configuração**. É muito comum querer reproduzir o ambiente de produção no de desenvolvimento, muitas vezes, quando a configuração não é a mesma, pode ser difícil mapear o motivo dos erros, porque o problema pode ter sido pelo ambiente de execução. Usando o Docker, você pode criar um ambiente DEV, STAGING e PRODUÇÃO, todos com as mesmas definições.  
+**Integração do time com novos desenvolvedores**.  A maioria dos times pode passar pelo processo de integrar um desenvolvedor a um projeto que já existe, e pode ser um processo traumático  para ele ter que instalar SDK’s, ferramentas de desenvolvimento, banco de dados, adicionar permissões, muitas vezes chegando a levar semanas.  
+**Ambientes com a mesma configuração**. É muito comum querer reproduzir o ambiente de produção no de desenvolvimento, muitas vezes, quando a configuração não é a mesma, pode ser difícil mapear o motivo dos erros, porque o problema pode ter sido causado pelo ambiente de execução. Usando o Docker, você pode criar um ambiente DEV, STAGING e PRODUÇÃO, todos com as mesmas definições.  
 **O famoso jargão "Funciona na minha máquina"**. O docker criar contêineres isolados, onde você especifica exatamente o que eles devem conter, você pode enviar esses containers aos clientes e eles irão funcionar da mesma forma que na sua máquina de desenvolvimento.
 
 
@@ -65,11 +63,11 @@ Para fazer isso, seguimos os seguintes passos:
 
 ## Criando a aplicação do apollo-server
 
-Para agilizar o tutorial, vou mostrar apenas a configuração que segui, que foi do [getting-started do Apollo-Server](https://www.apollographql.com/docs/apollo-server/)
+Para agilizar o tutorial, vou deixar apenas o link da configuração que segui, que foi do [getting-started do Apollo-Server](https://www.apollographql.com/docs/apollo-server/)
 
 ## Criando um dockerfile
 
-Certo, o próximo passo é definir nosso dockerfile. Esse arquivo atua como um manifest, mas também como um arquivo de instrução de como fazer o build, em que nós podemos levantar nossa aplicação e executar. Ok, então o que nós precisamos para ter isso?
+Certo, o próximo passo é definir nosso dockerfile. Esse arquivo atua como um manifest, e também como um arquivo de instrução de como fazer o build. Ok, então o que nós precisamos para ter isso?
 
 1. **copiar** todos os arquivos do nosso app para o container do docker  
 2. **instalar** as dependências  
@@ -95,7 +93,7 @@ ENTRYPOINT ["npm", "start"]
 ```
 
 
-**FROM** Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. [Docker Hub](https://hub.docker.com/) um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag `:latest`  
+**FROM** Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. [Docker Hub](https://hub.docker.com/) é um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag `:latest`  
 **WORKDIR** Isso simplesmente significa que nós estamos configurando um diretório de trabalho. Isso é uma maneira de definir onde nossos arquivos ficarão no container.  
 **COPY** Aqui nós copiamos os arquivos do diretório atual, para o diretório que acabamos de criar com o `WORKDIR`.  
 **RUN** Isso executa um comando no terminal, no nosso caso, queremos instalar as bibliotecas necessárias para construir nosso apollo-server, por isso, usamos o `npm install`.  
@@ -122,14 +120,14 @@ Primeiro de tudo, vamos criar nossa imagem com o seguinte comando:
 
 `docker build -f .docker/node.dockerfile .`
 
-A instrução acima cria uma imagem. O `.` no final é importante, serve para especficar que o diretório raiz da app, é o que estamos atualmente, a opção `-f` dockerfile está localizado, nesse caso, no diretório `.docker/`. Se você não tiver a imagem definida no `Dockerfile`(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.
+A instrução acima cria uma imagem. O `.` no final é importante, serve para especificar que o diretório raiz da app, é o que estamos atualmente, a opção `-f` indica onde o dockerfile está localizado, nesse caso, no diretório `.docker/`. Se você não tiver a imagem definida no `Dockerfile`(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.
 
 *OBS: Caso o dockerfile estivesse no diretório atual, executaríamos o seguinte:*
 `docker build .`
 
 ![](https://i.imgur.com/KTt1Hro.png)
 
-O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado, WORKDIR, RUN, e os outros. No final, nós vemos "sucessfuly built" que é um ínicio de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:
+O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado, WORKDIR, RUN, e os outros. No final, nós vemos "sucessfully built" que é um índicio de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:
 
 `docker images`
 
@@ -158,9 +156,10 @@ Ok, executando esse comando significa que nós conseguiremos visitar nosso conta
 
 ## Referências & Links para estudo
 
+https://dev.to/softchris/5-part-docker-series-beginner-to-master-3m1b
+
 https://docker-curriculum.com/#getting-started
 
 https://docs.docker.com/get-started/
 
-https://dev.to/softchris/5-part-docker-series-beginner-to-master-3m1b
 

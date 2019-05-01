@@ -38,8 +38,6 @@
 
 &lt;p&gt;&lt;strong&gt;Dockerizando nossa aplicação&lt;/strong&gt;. Vamos dockerizar uma aplicação para mostrar o que entendemos e podemos usar com os principais conceitos do docker.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Gerenciando o container&lt;/strong&gt;. Agora é muito fácil subir um container, mas também precisamos aprender a gerenciá-lo, já que não queremos que ele fique executando pra sempre.&lt;/p&gt;
-
 &lt;p&gt;Essa é a primeira parte da série, nos próximos posts pretendemos abordar, volumes, linkamento, microsserviços, e orquestração.&lt;/p&gt;
 
 &lt;h2 id=&#34;por-quê-usar-o-docker&#34;&gt;Por quê usar o docker?&lt;/h2&gt;
@@ -48,8 +46,8 @@
 
 &lt;h2 id=&#34;e-por-quê-você-iria-querer-isso&#34;&gt;E por quê você iria querer isso?&lt;/h2&gt;
 
-&lt;p&gt;&lt;strong&gt;Integração do time com novos desenvolvedores&lt;/strong&gt;.  A maioria dos times pode passar pelo processo de integrar um desenvolvedor a um projeto que já existe, e pode ser um processo traumático  para ele ter que instalar SDK’s, ferramentas de desenvolvimento, banco de dados,adicionar permissões, muitas vezes chegando a levar semanas.&lt;br /&gt;
-&lt;strong&gt;Ambientes com a mesma configuração&lt;/strong&gt;. É muito comum querer reproduzir o ambiente de produção no de desenvolvimento, muitas vezes, quando a configuração não é a mesma, pode ser difícil mapear o motivo dos erros, porque o problema pode ter sido pelo ambiente de execução. Usando o Docker, você pode criar um ambiente DEV, STAGING e PRODUÇÃO, todos com as mesmas definições.&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;Integração do time com novos desenvolvedores&lt;/strong&gt;.  A maioria dos times pode passar pelo processo de integrar um desenvolvedor a um projeto que já existe, e pode ser um processo traumático  para ele ter que instalar SDK’s, ferramentas de desenvolvimento, banco de dados, adicionar permissões, muitas vezes chegando a levar semanas.&lt;br /&gt;
+&lt;strong&gt;Ambientes com a mesma configuração&lt;/strong&gt;. É muito comum querer reproduzir o ambiente de produção no de desenvolvimento, muitas vezes, quando a configuração não é a mesma, pode ser difícil mapear o motivo dos erros, porque o problema pode ter sido causado pelo ambiente de execução. Usando o Docker, você pode criar um ambiente DEV, STAGING e PRODUÇÃO, todos com as mesmas definições.&lt;br /&gt;
 &lt;strong&gt;O famoso jargão &amp;ldquo;Funciona na minha máquina&amp;rdquo;&lt;/strong&gt;. O docker criar contêineres isolados, onde você especifica exatamente o que eles devem conter, você pode enviar esses containers aos clientes e eles irão funcionar da mesma forma que na sua máquina de desenvolvimento.&lt;/p&gt;
 
 &lt;h2 id=&#34;o-que-é-o-docker&#34;&gt;O que é o docker?&lt;/h2&gt;
@@ -75,11 +73,11 @@
 
 &lt;h2 id=&#34;criando-a-aplicação-do-apollo-server&#34;&gt;Criando a aplicação do apollo-server&lt;/h2&gt;
 
-&lt;p&gt;Para agilizar o tutorial, vou mostrar apenas a configuração que segui, que foi do &lt;a href=&#34;https://www.apollographql.com/docs/apollo-server/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;getting-started do Apollo-Server&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Para agilizar o tutorial, vou deixar apenas o link da configuração que segui, que foi do &lt;a href=&#34;https://www.apollographql.com/docs/apollo-server/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;getting-started do Apollo-Server&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;criando-um-dockerfile&#34;&gt;Criando um dockerfile&lt;/h2&gt;
 
-&lt;p&gt;Certo, o próximo passo é definir nosso dockerfile. Esse arquivo atua como um manifest, mas também como um arquivo de instrução de como fazer o build, em que nós podemos levantar nossa aplicação e executar. Ok, então o que nós precisamos para ter isso?&lt;/p&gt;
+&lt;p&gt;Certo, o próximo passo é definir nosso dockerfile. Esse arquivo atua como um manifest, e também como um arquivo de instrução de como fazer o build. Ok, então o que nós precisamos para ter isso?&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;copiar&lt;/strong&gt; todos os arquivos do nosso app para o container do docker&lt;br /&gt;&lt;/li&gt;
@@ -105,7 +103,7 @@ EXPOSE $PORT
 ENTRYPOINT [&amp;quot;npm&amp;quot;, &amp;quot;start&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;strong&gt;FROM&lt;/strong&gt; Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. &lt;a href=&#34;https://hub.docker.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Docker Hub&lt;/a&gt; um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag &lt;code&gt;:latest&lt;/code&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;FROM&lt;/strong&gt; Este comando seleciona a imagem do sistema operacional, a partir do Docker Hub. &lt;a href=&#34;https://hub.docker.com/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;Docker Hub&lt;/a&gt; é um repositório global que contém imagens que podemos baixar localmente. No nosso caso, podemos escolher uma imagem baseada no Ubuntu que tem o node instalado, e nós podemos especificar que queremos a última versão, usando a tag &lt;code&gt;:latest&lt;/code&gt;&lt;br /&gt;
 &lt;strong&gt;WORKDIR&lt;/strong&gt; Isso simplesmente significa que nós estamos configurando um diretório de trabalho. Isso é uma maneira de definir onde nossos arquivos ficarão no container.&lt;br /&gt;
 &lt;strong&gt;COPY&lt;/strong&gt; Aqui nós copiamos os arquivos do diretório atual, para o diretório que acabamos de criar com o &lt;code&gt;WORKDIR&lt;/code&gt;.&lt;br /&gt;
 &lt;strong&gt;RUN&lt;/strong&gt; Isso executa um comando no terminal, no nosso caso, queremos instalar as bibliotecas necessárias para construir nosso apollo-server, por isso, usamos o &lt;code&gt;npm install&lt;/code&gt;.&lt;br /&gt;
@@ -133,14 +131,14 @@ ENTRYPOINT [&amp;quot;npm&amp;quot;, &amp;quot;start&amp;quot;]
 
 &lt;p&gt;&lt;code&gt;docker build -f .docker/node.dockerfile .&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;A instrução acima cria uma imagem. O &lt;code&gt;.&lt;/code&gt; no final é importante, serve para especficar que o diretório raiz da app, é o que estamos atualmente, a opção &lt;code&gt;-f&lt;/code&gt; dockerfile está localizado, nesse caso, no diretório &lt;code&gt;.docker/&lt;/code&gt;. Se você não tiver a imagem definida no &lt;code&gt;Dockerfile&lt;/code&gt;(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.&lt;/p&gt;
+&lt;p&gt;A instrução acima cria uma imagem. O &lt;code&gt;.&lt;/code&gt; no final é importante, serve para especificar que o diretório raiz da app, é o que estamos atualmente, a opção &lt;code&gt;-f&lt;/code&gt; indica onde o dockerfile está localizado, nesse caso, no diretório &lt;code&gt;.docker/&lt;/code&gt;. Se você não tiver a imagem definida no &lt;code&gt;Dockerfile&lt;/code&gt;(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;OBS: Caso o dockerfile estivesse no diretório atual, executaríamos o seguinte:&lt;/em&gt;
 &lt;code&gt;docker build .&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://i.imgur.com/KTt1Hro.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado, WORKDIR, RUN, e os outros. No final, nós vemos &amp;ldquo;sucessfuly built&amp;rdquo; que é um ínicio de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:&lt;/p&gt;
+&lt;p&gt;O que você está vendo, é como o docker está baixando a imagem do node a partir do dockerhub, e então cada comando está sendo executado, WORKDIR, RUN, e os outros. No final, nós vemos &amp;ldquo;sucessfully built&amp;rdquo; que é um índicio de que tudo foi construído com sucesso. Vamos dar uma olhada na nossa imagem com:&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;docker images&lt;/code&gt;&lt;/p&gt;
 
@@ -168,11 +166,11 @@ ENTRYPOINT [&amp;quot;npm&amp;quot;, &amp;quot;start&amp;quot;]
 
 &lt;h2 id=&#34;referências-links-para-estudo&#34;&gt;Referências &amp;amp; Links para estudo&lt;/h2&gt;
 
+&lt;p&gt;&lt;a href=&#34;https://dev.to/softchris/5-part-docker-series-beginner-to-master-3m1b&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://dev.to/softchris/5-part-docker-series-beginner-to-master-3m1b&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://docker-curriculum.com/#getting-started&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://docker-curriculum.com/#getting-started&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://docs.docker.com/get-started/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://docs.docker.com/get-started/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://dev.to/softchris/5-part-docker-series-beginner-to-master-3m1b&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;https://dev.to/softchris/5-part-docker-series-beginner-to-master-3m1b&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
