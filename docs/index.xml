@@ -75,6 +75,8 @@
 
 &lt;h2 id=&#34;criando-a-aplicação-do-apollo-server&#34;&gt;Criando a aplicação do apollo-server&lt;/h2&gt;
 
+&lt;p&gt;Para agilizar o tutorial, vou mostrar apenas a configuração que segui, que foi do &lt;a href=&#34;https://www.apollographql.com/docs/apollo-server/&#34; rel=&#34;nofollow noreferrer&#34; target=&#34;_blank&#34;&gt;getting-started do Apollo-Server&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&#34;criando-um-dockerfile&#34;&gt;Criando um dockerfile&lt;/h2&gt;
 
 &lt;p&gt;Certo, o próximo passo é definir nosso dockerfile. Esse arquivo atua como um manifest, mas também como um arquivo de instrução de como fazer o build, em que nós podemos levantar nossa aplicação e executar. Ok, então o que nós precisamos para ter isso?&lt;/p&gt;
@@ -134,7 +136,7 @@ ENTRYPOINT [&amp;quot;npm&amp;quot;, &amp;quot;start&amp;quot;]
 &lt;p&gt;A instrução acima cria uma imagem. O &lt;code&gt;.&lt;/code&gt; no final é importante, serve para especficar que o diretório raiz da app, é o que estamos atualmente, a opção &lt;code&gt;-f&lt;/code&gt; dockerfile está localizado, nesse caso, no diretório &lt;code&gt;.docker/&lt;/code&gt;. Se você não tiver a imagem definida no &lt;code&gt;Dockerfile&lt;/code&gt;(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;OBS: Caso o dockerfile estivesse no diretório atual, executaríamos o seguinte:&lt;/em&gt;
-&lt;code&gt;docker build -t panelinhadees/server:0.1.0 .&lt;/code&gt;&lt;/p&gt;
+&lt;code&gt;docker build .&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://i.imgur.com/KTt1Hro.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 

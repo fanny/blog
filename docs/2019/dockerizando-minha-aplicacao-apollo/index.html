@@ -58,7 +58,7 @@ Enquanto eu escrevo, esse post, estou ouvindo uma música do Iron &amp; Wine, a 
     "datePublished": "2019-04-28 22:30:24 -0300 -03",
     "dateModified" : "2019-04-28 22:30:24 -0300 -03",
     "url" : "https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/",
-    "wordCount" : "1779",
+    "wordCount" : "1794",
     "keywords" : [ "Docker","Apollo","Apollo-Server","Development", "Fanny&#39;s Blog"]
 }
 </script>
@@ -213,6 +213,8 @@ Enquanto eu escrevo, esse post, estou ouvindo uma música do Iron &amp; Wine, a 
 
 <h2 id="criando-a-aplicação-do-apollo-server">Criando a aplicação do apollo-server</h2>
 
+<p>Para agilizar o tutorial, vou mostrar apenas a configuração que segui, que foi do <a href="https://www.apollographql.com/docs/apollo-server/" rel="nofollow noreferrer" target="_blank">getting-started do Apollo-Server</a></p>
+
 <h2 id="criando-um-dockerfile">Criando um dockerfile</h2>
 
 <p>Certo, o próximo passo é definir nosso dockerfile. Esse arquivo atua como um manifest, mas também como um arquivo de instrução de como fazer o build, em que nós podemos levantar nossa aplicação e executar. Ok, então o que nós precisamos para ter isso?</p>
@@ -272,7 +274,7 @@ ENTRYPOINT [&quot;npm&quot;, &quot;start&quot;]
 <p>A instrução acima cria uma imagem. O <code>.</code> no final é importante, serve para especficar que o diretório raiz da app, é o que estamos atualmente, a opção <code>-f</code> dockerfile está localizado, nesse caso, no diretório <code>.docker/</code>. Se você não tiver a imagem definida no <code>Dockerfile</code>(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.</p>
 
 <p><em>OBS: Caso o dockerfile estivesse no diretório atual, executaríamos o seguinte:</em>
-<code>docker build -t panelinhadees/server:0.1.0 .</code></p>
+<code>docker build .</code></p>
 
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://i.imgur.com/KTt1Hro.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 

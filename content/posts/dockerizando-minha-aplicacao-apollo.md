@@ -65,6 +65,7 @@ Para fazer isso, seguimos os seguintes passos:
 
 ## Criando a aplicação do apollo-server
 
+Para agilizar o tutorial, vou mostrar apenas a configuração que segui, que foi do [getting-started do Apollo-Server](https://www.apollographql.com/docs/apollo-server/)
 
 ## Criando um dockerfile
 
@@ -124,7 +125,7 @@ Primeiro de tudo, vamos criar nossa imagem com o seguinte comando:
 A instrução acima cria uma imagem. O `.` no final é importante, serve para especficar que o diretório raiz da app, é o que estamos atualmente, a opção `-f` dockerfile está localizado, nesse caso, no diretório `.docker/`. Se você não tiver a imagem definida no `Dockerfile`(usando o comando FROM, linha 1), no nosso caso, a do node, o docker irá primeiro baixá-la a partir do dockerhub, e seu terminal parecerá com isso.
 
 *OBS: Caso o dockerfile estivesse no diretório atual, executaríamos o seguinte:*
-`docker build -t panelinhadees/server:0.1.0 .`
+`docker build .`
 
 ![](https://i.imgur.com/KTt1Hro.png)
 
