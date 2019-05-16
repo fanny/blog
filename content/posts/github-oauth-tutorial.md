@@ -1,5 +1,5 @@
 ---
-title: "Github Oauth Tutorial"
+title: "Github OAuth Tutorial"
 date: 2019-05-15T22:14:07-03:00
 tags: ["Github Oauth", "Nodejs", "Express", "Development"]
 author: "Fanny Vieira"
