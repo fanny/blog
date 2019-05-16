@@ -1,7 +1,9 @@
 ---
 title: "Github Oauth Tutorial"
 date: 2019-05-15T22:14:07-03:00
-draft: true
+tags: ["Github Oauth", "Nodejs", "Express", "Development"]
+author: "Fanny Vieira"
+categories: ["Uncategorized"]
 ---
 
 ## *Fluxo* de autenticação no github
