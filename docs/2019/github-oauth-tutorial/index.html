@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Covey.Liu">
+  
+  
+  
+  <link rel="prev" href="https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/" />
+  
+  <link rel="canonical" href="https://fanny.github.io/blog/2019/github-oauth-tutorial/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Github OAuth Tutorial | Fanny&#39;s Blog
+       
+  </title>
+  <meta name="title" content="Github OAuth Tutorial | Fanny&#39;s Blog">
+    
+  
+  <link rel="stylesheet" href="/blog/font/iconfont.css">
+  <link rel="stylesheet" href="/blog/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://fanny.github.io/blog"
+    },
+    "articleSection" : "posts",
+    "name" : "Github OAuth Tutorial",
+    "headline" : "Github OAuth Tutorial",
+    "description" : "Fluxo de autenticação no github Quando um usuário deseja se logar na nossa aplicação, ele precisa clicar no botão de Login, ao clicar nele, o mesmo será direcionado a um form provido pelo github, em que é necessário colocar seu nome de usuário e senha (caso o usuário não esteja logado na sua conta do github) como mostra a imagem abaixo:
+// imagem
+Se esse é o primeiro acesso, será feito um pedido de autorização para o acesso de algumas informações:",
+    "inLanguage" : "en-us",
+    "author" : "Fanny Vieira",
+    "creator" : "Fanny Vieira",
+    "publisher": "Fanny Vieira",
+    "accountablePerson" : "Fanny Vieira",
+    "copyrightHolder" : "Fanny Vieira",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-05-15 22:14:07 -0300 -03",
+    "dateModified" : "2019-05-15 22:14:07 -0300 -03",
+    "url" : "https://fanny.github.io/blog/2019/github-oauth-tutorial/",
+    "wordCount" : "1148",
+    "keywords" : [ "Github Oauth","Nodejs","Express","Development", "Fanny&#39;s Blog"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://fanny.github.io/blog">Fanny&#39;s Blog</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/blog/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/blog/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/blog/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/blog/about/" title="">About</a>
+                
+                <a class="menu-item" href="/blog/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://fanny.github.io/blog">Fanny&#39;s Blog</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/blog/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/blog/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/blog/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/blog/about/" title="">About</a>
+                
+                <a class="menu-item" href="/blog/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Github OAuth Tutorial</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://fanny.github.io/blog" rel="author">Fanny Vieira</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-05-15 itemprop="datePublished">May 15, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://fanny.github.io/blog/categories/uncategorized/"> Uncategorized </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h2 id="fluxo-de-autenticação-no-github"><em>Fluxo</em> de autenticação no github</h2>
+
+<p>Quando um usuário deseja se logar na nossa aplicação, ele precisa clicar no botão de Login, ao clicar nele,
+o mesmo será direcionado a um form provido pelo github, em que é necessário colocar seu nome de
+usuário e senha (caso o usuário não esteja logado na sua conta do github) como mostra a imagem abaixo:<br />
+<code>// imagem</code><br />
+Se esse é o primeiro acesso, será feito um pedido de autorização para o acesso de algumas informações:<br />
+<code>//imagem</code><br />
+Uma vez que o usuário aceitou as permissões, o back conseguirá gerar o token, e passá-lo para o front através de uma url de redirecionamento definida no arquivo <code>.env</code>, caso as permissões não sejam aceitas, ele será redirecionado para url de erro, também configurada no <code>.env</code>, como veremos a seguir.</p>
+
+<p>Certo, tudo muito lindo, mas como fazemos isso funcionar por debaixo dos panos?</p>
+
+<p>Nós, aqui do panelinha de es, somos devs que gostam de abstrair ideias a partir de figuras, sendo assim, para que você entenda como se dá a comunicação entre o cliente o servidor, observe a figura abaixo:</p>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://i.imgur.com/Q0uQ9K2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+
+<p>A partir da figura acima, vemos que o cliente, apenas requisita o login e o back abstrai toda a lógica de negócio da autenticação, e ao final de todos os processos, redirecionará, para a url de sucesso ou erro configurada.</p>
+
+<p>Okay, agora que definimos isso, vamos pular para o código.</p>
+
+<h2 id="criando-uma-aplicação-github-oauth">Criando uma aplicação Github Oauth</h2>
+
+<p>Para criar a aplicação do Github OAuth, acesse o github, e siga o seguintes passos:</p>
+
+<ol>
+<li>Navegue até a parte de settings.</li>
+<li>Clique na seção de Developer Settings.</li>
+<li>Clique no botão para criar uma nova aplicação OAuth.</li>
+<li>Preencha corretamente as informações necessárias.</li>
+</ol>
+
+<h2 id="configurando-o-servidor">Configurando o servidor</h2>
+
+<p>Após termos criado o github oauth app, precisamos configurar nosso servidor, para testar o que definimos anteriormente.</p>
+
+<p>Para isso, baixamos <a href="https://github.com/panelinhadees/server.git" rel="nofollow noreferrer" target="_blank">o projeto do servidor</a>, e para que ele funcione corretamente, é necessário criar um  arquivo chamado <code>.env</code>, que nos ajuda a definir as configurações necessárias para execução da aplicação, veja o exemplo abaixo e crie o arquivo seguindo esse mesmo template.</p>
+
+<p>Podemos dividir as configurações em quatro tipos:
+- <strong>Github OAuth</strong>: Configurações relacionadas a configuração da app auth, que criamos no passo anterior.
+- <strong>Server</strong>: Configuração da porta, e da url de acesso ao servidor.
+- <strong>Client</strong>: Configuração da porta, e da url de acesso ao cliente(você entenderá a seguir porque isso é necessário).
+- <strong>Rotas</strong>: As rotas de redirecionamento para o cliente, em caso de erro ou sucesso.</p>
+
+<p><em>.env</em></p>
+
+<pre><code class="language-.env"># Required
+GITHUB_OAUTH_CLIENT_ID=your-oauth-app-client-id
+GITHUB_OAUTH_CLIENT_SECRET=your-oauth-app-client-secret
+GITHUB_OAUTH_CALLBACK_URL=your-oauth-app-callback-url
+
+# Optional - Uncomment if you want to change these values
+# SERVER_BASE_URL='http://localhost'
+# SERVER_PORT=5000
+
+# CLIENT_BASE_URL='http://localhost'
+# CLIENT_PORT=8080
+
+# The auth token will be sent to $CLIENT_BASE_URL:$CLIENT_PORT$CLIENT_AUTH_SUCCESS_PATH/:token
+# In case of error a message will be sent to $CLIENT_BASE_URL:$CLIENT_PORT$CLIENT_AUTH_ERROR_PATH
+
+# CLIENT_AUTH_SUCCESS_PATH='/auth'
+# CLIENT_AUTH_FAIL_PATH='/error'
+</code></pre>
+
+<p>Agora, podemos instalar as dependências e levantar o nosso servidor.</p>
+
+<h2 id="instalando-as-dependências">Instalando as dependências</h2>
+
+<p>Para instalar as dependências, usamos o <code>npm</code>, e rodamos o seguinte comando:</p>
+
+<p><code>npm install</code></p>
+
+<p>E para subir o servidor, executamos esse:</p>
+
+<p><code>npm start</code></p>
+
+<p><em>TODO: docker config</em></p>
+
+<h2 id="linkando-o-server-ao-front">Linkando o server ao front</h2>
+
+<p>Crie um componente, que contenha um link como o abaixo:</p>
+
+<pre><code class="language-html">&lt;a id=&quot;login-button&quot; href=&quot;SERVER_BASE_URL:SERVER_PORT/login&quot;&gt;Log In With GitHub&lt;/a&gt;
+</code></pre>
+
+<h2 id="gerenciando-o-login">Gerenciando o login</h2>
+
+<p>Quando o cliente clica no link de login, é a rota <code>/login</code> do servidor que é invocada.</p>
+
+<p>Definida pelo seguinte código:</p>
+
+<pre><code class="language-js">router.get('/login', (req, res) =&gt; {
+  const state = generateRandomState(16);
+  res.cookie(stateKey, state);
+
+  const queryString = querystring.stringify({
+    client_id: config.github.clientId,
+    redirect_uri: config.github.redirectUrl,
+    state: state,
+    scope: config.github.scope
+  });
+
+  const url = getAuthBaseURL(`/authorize?${queryString}`);
+  res.redirect(url);
+});
+</code></pre>
+
+<p>Existe uma série de passos a ser feita para se logar no github, a primeira delas é <a href="https://github.com/login/oauth/authorize" rel="nofollow noreferrer" target="_blank">requisitar a identidade do usuário</a>, para tal, requisitamos um endpoint da api do github passando alguns parâmetros, como mostra a especificação a seguir:</p>
+
+<p><code>GET https://github.com/login/oauth/authorize</code></p>
+
+<p>Os parâmetros passados são:
+- o <code>client_id</code> da nossa github oauth app, que setamos no arquivo <code>.env</code>
+- a <code>redirect_uri</code>, a url na qual os usuários serão redirecionados, ao final da nossa autenticação, quando todos os passos forem concluidos, no nosso caso, a url de sucesso do cliente que setamos no <code>.env</code>
+- o <code>state</code>, que é só uma string randômica, usada para prevenção de alguns ataques, no próximo passo isso fará mais sentido, temos uma lógica própria pra gerar essa string randômica, verifique <a href="https://github.com/panelinhadees/server/blob/master/src/auth/util.js" rel="nofollow noreferrer" target="_blank">esse arquivo</a>
+- o <code>scope</code>, que define os tipos de acesso que a nossa aplicação precisa, atualmente apenas os que estão definidas <a href="https://github.com/panelinhadees/server/blob/33ea7a5f3d11bb9880297efbb15719753a0c9e9f/src/config.js#L7" rel="nofollow noreferrer" target="_blank">aqui</a></p>
+
+<p><em>Obs: O state é salvo nos cookies do browser, para serem usados no passo a seguir</em></p>
+
+<p>Uma vez que definimos esses parâmetros, requisitamos a url do github, se o usuário aceitar as permissões, o próprio github irá redirecionar pra o link de <code>callback</code> definido na criação do github oauth app, no nosso caso, foi <code>/callback</code> mesmo.</p>
+
+<p>A rota <code>/callback</code> possui o seguinte código:</p>
+
+<pre><code class="language-js">router.get('/callback', (req, res) =&gt; {
+  const storedState = req.cookies ? req.cookies[stateKey] : null;
+  const { state } = req.query;
+
+  if (state &amp;&amp; storedState === state) {
+    requestAccessToken(req, res);
+  } else {
+    const queryString = querystring.stringify({ error: 'state_mismatch' });
+    const url = getClientURL(`${config.client.errorPath}?${queryString}`);
+    res.redirect(url);
+  }
+});
+
+const requestAccessToken = (req, res) =&gt; {
+  res.clearCookie(stateKey);
+  const { code } = req.query;
+
+  const requestOptions = {
+    url: getAuthBaseURL('/access_token'),
+    json: true,
+    form: {
+      code,
+      redirect_uri: config.github.redirectUri,
+      client_id: config.github.clientId,
+      client_secret: config.github.clientSecret,
+    },
+  };
+
+  request.post(requestOptions, (error, response, body) =&gt; {
+    let url;
+    if (!error &amp;&amp; response.statusCode === 200) {
+      const { access_token } = body;
+      url = getClientURL(`${config.client.successPath}/${access_token}`);
+    } else {
+      const queryString = querystring.stringify({ error: 'invalid_token' });
+      url = getClientURL(`${config.client.errorPath}?${queryString}`);
+    }
+    res.redirect(url);
+  });
+};
+</code></pre>
+
+<p>É a partir dela, que <a href="https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#2-users-are-redirected-back-to-your-site-by-github" rel="nofollow noreferrer" target="_blank">requisitamos o nosso token de acesso</a> e redirecionamos para url do nosso cliente.</p>
+
+<p>Agora você entenderá porque o <code>state</code> é importante, a fim de garantir que o usuário que está requisitando esse token foi o mesmo que fez o passo anterior, logo, não foi alvo de um ataque, o github passa na sua url o state que ele recebeu no primeiro passo, daí se os states forem iguais(por isso fazemos a comparação), prosseguimos com a requisição do token, caso contrário, redirecionamos pra url de erro do cliente.</p>
+
+<p>Dado que os states foram iguais, fazemos uma requisição <code>POST</code> pra essa url do github:</p>
+
+<p><code>POST https://github.com/login/oauth/access_token</code></p>
+
+<p>passando os seguintes itens no header:
+- o <code>code</code> recebido na nossa url de callback como parâmetro, quando o github redireciona, ela só tem 10 minutos de duração, então se passar disso, você precisa fazer o passo a passo do ínicio.
+- a <code>redirect_uri</code> url na qual os usuários serão redirecionados, ao final da nossa autenticação, quando todos os passos forem concluidos, no nosso caso, a url de sucesso do cliente que setamos no <code>.env</code>.
+- o <code>client_id</code> da nossa github oauth app, que setamos no arquivo <code>.env</code>
+- o <code>client_secret</code> da nossa github oauth app, que setamos no arquivo <code>.env</code></p>
+
+<p>Uma vez que esses campos foram definidos podemos fazer a requisição, se tudo der certo, o token será retornado e redirecionaremos pra url de sucesso do cliente, caso contrário, redirecionamos pra de erro.</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Covey.Liu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://fanny.github.io/blog/2019/github-oauth-tutorial/>https://fanny.github.io/blog/2019/github-oauth-tutorial/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://fanny.github.io/blog/tags/github-oauth/">
+                    #Github Oauth</a></span>
+            
+            <span class="tag"><a href="https://fanny.github.io/blog/tags/nodejs/">
+                    #Nodejs</a></span>
+            
+            <span class="tag"><a href="https://fanny.github.io/blog/tags/express/">
+                    #Express</a></span>
+            
+            <span class="tag"><a href="https://fanny.github.io/blog/tags/development/">
+                    #Development</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://fanny.github.io/blog">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://fanny.github.io/blog/2019/dockerizando-minha-aplicacao-apollo/" class="prev" rel="prev" title="Dockerizando Minha Aplicação Apollo"><i class="iconfont icon-left"></i>&nbsp;Dockerizando Minha Aplicação Apollo</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://fanny.github.io/blog">Covey.Liu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/blog/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
